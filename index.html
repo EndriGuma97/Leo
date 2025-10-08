@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Home - Leo Petritaj</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-orange: #ffaa4c;
+        --secondary-orange: #ff8a3d;
+        --primary-red: #ff5b4c;
+        --secondary-red: #e74c3c;
+        --dark-red: #c0392b;
+        --black: #1a1a1a;
+        --white: #ffffff;
+        --gray: #f5f5f5;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--black);
+        overflow-x: hidden;
+      }
+
+      /* Loading Animation */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s, visibility 0.5s;
+      }
+
+      .loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .paint-brush {
+        width: 60px;
+        height: 60px;
+        animation: brush-stroke 2s infinite;
+      }
+
+      @keyframes brush-stroke {
+        0%,
+        100% {
+          transform: rotate(-15deg) translateX(0);
+        }
+        50% {
+          transform: rotate(15deg) translateX(20px);
+        }
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: transform 0.3s;
+      }
+
+      nav::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+      }
+
+      .nav-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          padding: 0.8rem 1.5rem;
+        }
+      }
+
+      .logo {
+        height: 120px;
+        animation: fadeInDown 0.8s;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .logo:hover {
+        transform: scale(1.08) rotate(-2deg);
+        filter: drop-shadow(0 6px 12px rgba(255, 170, 76, 0.3));
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          height: 80px;
+        }
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--black);
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("/hero.png") center center no-repeat;
+        background-size: contain;
+        opacity: 1;
+        z-index: 0;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.1);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .hero::before {
+          background-position: center center;
+          background-size: auto 80%;
+          right: 0;
+        }
+
+        .hero::after {
+          background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0.4) 70%,
+            transparent 100%
+          );
+        }
+
+        .hero-content {
+          padding-left: 3rem;
+          max-width: 500px;
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .hero::before {
+          background-position: right center;
+          background-size: auto 90%;
+          right: 0;
+        }
+
+        .hero-content {
+          margin-left: 8%;
+        }
+      }
+
+      /* Extra large screens */
+      @media (min-width: 1400px) {
+        .hero::before {
+          background-size: auto 100%;
+          right: 5%;
+        }
+
+        .hero-content {
+          margin-left: 10%;
+          max-width: 700px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 100vh;
+          background: #000000; /* CHANGED */
+          position: relative;
+        }
+
+        .hero::before {
+          background-position: center top 110px;
+          background-size: 75% auto;
+          opacity: 1;
+          animation: fadeInMobile 1.5s ease-out;
+          z-index: 0;
+        }
+
+        @keyframes fadeInMobile {
+          from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero::before {
+          background-size: 95% auto;
+          background-position: center top 100px;
+          opacity: 1;
+        }
+
+        .hero-content {
+          padding-top: 62vh;
+        }
+
+        .hero-title {
+          font-size: 3rem;
+        }
+      }
+
+      @media (min-width: 481px) and (max-width: 768px) {
+        .hero::before {
+          background-size: 70% auto;
+          background-position: center top 120px;
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) and (orientation: landscape) {
+        .hero {
+          min-height: 150vh;
+          background: #000000; /* CHANGED */
+        }
+
+        .hero::before {
+          background-size: 40% auto;
+          background-position: right center;
+          opacity: 1;
+        }
+
+        .hero-content {
+          padding-top: 8rem;
+        }
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.7) 40%,
+          rgba(0, 0, 0, 0.3) 60%,
+          transparent 100%
+        );
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .hero::after {
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 55%,
+            transparent 63%,
+            rgba(0, 0, 0, 0.1) 71%,
+            rgba(0, 0, 0, 0.4) 79%,
+            rgba(0, 0, 0, 0.75) 87%,
+            rgba(0, 0, 0, 0.95) 95%,
+            black 100%
+          );
+          z-index: 1;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .hero::after {
+          background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0.4) 70%,
+            transparent 100%
+          );
+        }
+      }
+
+      .hero-bg {
+        display: none;
+      }
+
+      .paint-animation {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.05) 10px,
+          rgba(255, 255, 255, 0.05) 20px
+        );
+        animation: paint-flow 20s linear infinite;
+      }
+
+      @keyframes paint-flow {
+        0% {
+          transform: translate(-50%, -50%);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        padding-top: 10rem;
+        padding-bottom: 4rem;
+        color: var(--white);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+      }
+
+      @media (min-width: 769px) {
+        .hero-content {
+          max-width: 600px;
+          margin: 0;
+          margin-left: 5%;
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          text-align: center;
+          padding-top: 65vh;
+          padding-bottom: 3rem;
+          position: relative;
+          z-index: 2;
+        }
+      }
+
+      .hero-title {
+        font-size: clamp(3.5rem, 12vw, 7rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.8s;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9),
+          0 0 40px rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+        color: var(--white);
+        line-height: 1;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: clamp(3rem, 15vw, 4.5rem);
+          text-shadow: 4px 4px 20px rgba(0, 0, 0, 1),
+            0 0 60px rgba(0, 0, 0, 0.9);
+          -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.8s 0.2s both;
+        opacity: 0.95;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+        color: var(--primary-orange);
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .hero-subtitle {
+          text-shadow: 3px 3px 15px rgba(0, 0, 0, 1),
+            0 0 30px rgba(0, 0, 0, 0.9);
+          color: #ffaa4c;
+          font-weight: 800;
+          -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .hero-description {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.8;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.8s 0.3s both;
+        opacity: 0.9;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+      }
+
+      @media (min-width: 769px) {
+        .hero-description {
+          background: none;
+          padding: 0;
+          border-radius: 0;
+          backdrop-filter: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-description {
+          max-width: 90%;
+          margin: 0 auto 2rem;
+          background: rgba(0, 0, 0, 0.9);
+          padding: 1.5rem;
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          border: 2px solid rgba(255, 170, 76, 0.3);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .hero-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 0.8s 0.4s both;
+      }
+
+      @media (min-width: 769px) {
+        .hero-features {
+          justify-content: flex-start;
+          max-width: 600px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-features {
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      .hero-feature {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 0.7rem 1.3rem;
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        border: 1px solid rgba(255, 170, 76, 0.3);
+        white-space: nowrap;
+      }
+
+      @media (min-width: 769px) {
+        .hero-feature {
+          font-size: 0.95rem;
+          padding: 0.6rem 1.2rem;
+          background: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-feature {
+          background: rgba(0, 0, 0, 0.9);
+          border: 2px solid rgba(255, 170, 76, 0.5);
+          box-shadow: 0 4px 15px rgba(255, 170, 76, 0.2);
+        }
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1.2rem 2.5rem;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        animation: fadeInUp 0.8s 0.5s both, pulse 2s infinite;
+        box-shadow: 0 10px 30px rgba(255, 91, 76, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .cta-button {
+          box-shadow: 0 10px 35px rgba(255, 91, 76, 0.6);
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 10px 30px rgba(255, 91, 76, 0.4);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 15px 40px rgba(255, 91, 76, 0.6);
+        }
+      }
+
+      @media (max-width: 768px) {
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1.05);
+            box-shadow: 0 10px 35px rgba(255, 91, 76, 0.6);
+          }
+          50% {
+            transform: scale(1.08);
+            box-shadow: 0 15px 45px rgba(255, 91, 76, 0.8);
+          }
+        }
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(255, 91, 76, 0.7);
+        background: linear-gradient(
+          90deg,
+          var(--secondary-orange),
+          var(--secondary-red)
+        );
+      }
+
+      /* Color Banner Section */
+      .color-banner {
+        padding: 4rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange) 0%,
+          var(--primary-red) 50%,
+          var(--dark-red) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .color-banner::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 255, 255, 0.05) 10px,
+          rgba(255, 255, 255, 0.05) 20px
+        );
+        animation: paint-flow 20s linear infinite;
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .banner-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      .banner-text {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .color-swatches {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .swatch {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      .swatch:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .swatch:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .swatch:nth-child(3) {
+        animation-delay: 1s;
+      }
+      .swatch:nth-child(4) {
+        animation-delay: 1.5s;
+      }
+      .swatch:nth-child(5) {
+        animation-delay: 2s;
+      }
+
+      .swatch:hover {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      /* About Section */
+      .about {
+        padding: 5rem 2rem;
+        background: var(--white);
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: center;
+      }
+
+      .about-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 2rem;
+        color: var(--black);
+        position: relative;
+      }
+
+      .about-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        border-radius: 2px;
+      }
+
+      .about-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 170, 76, 0.1),
+          rgba(255, 91, 76, 0.1)
+        );
+        border-radius: 15px;
+        transition: transform 0.3s;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.5rem;
+      }
+
+      .about-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .team-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding: 2rem;
+        color: var(--white);
+      }
+
+      .overlay-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .why-choose-us {
+        padding: 3rem;
+        background: var(--gray);
+        border-radius: 20px;
+      }
+
+      .why-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: var(--black);
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .reason-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .reason-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .reason-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .reason-card h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--black);
+      }
+
+      .reason-card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 2rem;
+        background: var(--gray);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 3rem;
+        position: relative;
+        color: var(--black);
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover .service-image {
+        transform: scale(1.1);
+      }
+
+      .service-content {
+        padding: 2rem;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .service-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--black);
+      }
+
+      .service-description {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .service-tag {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 170, 76, 0.1),
+          rgba(255, 91, 76, 0.1)
+        );
+        color: var(--primary-red);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      /* Products Section */
+      .products {
+        padding: 5rem 2rem;
+        background: var(--white);
+      }
+
+      .product-showcase {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .product-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .product-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        color: var(--white);
+        padding: 2.5rem 1.5rem 1.5rem;
+        transform: translateY(60%);
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover .product-info {
+        transform: translateY(0);
+      }
+
+      .product-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-detail {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      .product-features {
+        margin-top: 4rem;
+        padding: 3rem;
+        background: var(--gray);
+        border-radius: 20px;
+      }
+
+      .features-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: var(--black);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .feature-item h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--black);
+      }
+
+      .feature-item p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Contact Form Section */
+      .contact {
+        padding: 5rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: rotate 30s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-form {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--black);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--black);
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-red);
+        box-shadow: 0 0 0 3px rgba(255, 91, 76, 0.1);
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 1.2rem;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        color: var(--white);
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--black);
+        color: var(--white);
+        padding: 3rem 2rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-orange);
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        line-height: 1.8;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: var(--primary-orange);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .logo {
+          height: 60px;
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 100px;
+          flex-direction: column;
+          background: var(--white);
+          width: 100%;
+          padding: 2rem;
+          transition: 0.3s;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .hero-features {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .color-swatches {
+          gap: 0.5rem;
+        }
+
+        .swatch {
+          width: 50px;
+          height: 50px;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contact-form {
+          padding: 2rem;
+        }
+
+        .services-grid,
+        .product-showcase {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Floating elements */
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Parallax scrolling effect */
+      .parallax {
+        transform: translateY(0);
+        transition: transform 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="paint-brush">
+        <svg viewBox="0 0 100 100">
+          <path
+            d="M30,20 L30,70 L40,80 L50,70 L50,20 Z"
+            fill="url(#brushGradient)"
+          />
+          <rect x="25" y="10" width="30" height="15" rx="2" fill="#333" />
+          <defs>
+            <linearGradient
+              id="brushGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #ffaa4c" />
+              <stop offset="100%" style="stop-color: #ff5b4c" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <nav id="navbar">
+      <div class="nav-container">
+        <img src="/logo.png" alt="Doctor Home" class="logo" />
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">Ballina</a></li>
+          <li><a href="#about" class="nav-link">Rreth Nesh</a></li>
+          <li><a href="#services" class="nav-link">Shërbimet</a></li>
+          <li><a href="#products" class="nav-link">Produktet</a></li>
+          <li><a href="#contact" class="nav-link">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">Doctor Home</h1>
+        <p class="hero-subtitle">Leo Petritaj - Ekspertë në Punime Cilësore</p>
+        <p class="hero-description">
+          Transformoni hapësirën tuaj me ngjyrat dhe dizajnin që ëndërroni! Me
+          përvojë 15-vjeçare në industri, ne ofrojmë zgjidhje profesionale për
+          çdo nevojë të shtëpisë suaj. Nga punimet elektrike deri tek dekorimi
+          më modern, ekipi ynë garanton cilësi të lartë dhe çmime konkurruese.
+        </p>
+        <div class="hero-features">
+          <div class="hero-feature">✓ Garanci 25-30 Vite</div>
+          <div class="hero-feature">✓ Produkte Amerikane & Gjermane</div>
+          <div class="hero-feature">✓ Konsultë Falas</div>
+        </div>
+        <a href="#contact" class="cta-button">Rezervo Konsultë Falas Tani</a>
+      </div>
+    </section>
+
+    <section class="color-banner">
+      <div class="banner-content">
+        <h2 class="banner-title">Ngjyrat e Ëndrrave Tuaja</h2>
+        <p class="banner-text">
+          Specialistë në transformimin e hapësirave me ngjyra dhe dizajne
+          moderne
+        </p>
+        <div class="color-swatches">
+          <div class="swatch" style="background: #ffaa4c"></div>
+          <div class="swatch" style="background: #ff8a3d"></div>
+          <div class="swatch" style="background: #ff5b4c"></div>
+          <div class="swatch" style="background: #e74c3c"></div>
+          <div class="swatch" style="background: #c0392b"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-content fade-in">
+          <div class="about-text">
+            <h2 class="about-title">Rreth Doctor Home</h2>
+            <p class="about-description">
+              <strong>Doctor Home</strong> është kompania lider në Tiranë për
+              punime cilësore në shtëpi dhe ambiente biznesi. Themeluar nga Leo
+              Petritaj, një profesionist me përvojë të gjatë në industri,
+              kompania jonë është rritur duke u bazuar në tre parime themelore:
+              <strong
+                >cilësi superiore, çmime të drejta, dhe garanci
+                afatgjatë.</strong
+              >
+            </p>
+            <p class="about-description">
+              Ne specializohemi në një gamë të gjerë shërbimesh që përfshijnë
+              punime elektrike moderne, lyerje artistike, aplikime të stuko
+              veneziane luksoze, dhe hidroizolim profesional. Çdo projekt
+              trajtohet me kujdesin maksimal, duke përdorur vetëm produkte
+              premium nga prodhuesit më të mirë amerikanë dhe gjermanë.
+            </p>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Vite Përvojë</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projekte të Përfunduara</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Vite Garanci</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Klientë të Kënaqur</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img
+              src="/hero2.png"
+              alt="Leo Petritaj dhe Ekipi"
+              class="team-image"
+            />
+            <div class="image-overlay">
+              <p class="overlay-text">Ekipi Profesional i Doctor Home</p>
+            </div>
+          </div>
+        </div>
+        <div class="why-choose-us fade-in">
+          <h3 class="why-title">Pse të Zgjidhni Doctor Home?</h3>
+          <div class="reasons-grid">
+            <div class="reason-card">
+              <div class="reason-icon">🏆</div>
+              <h4>Ekspertizë e Provuar</h4>
+              <p>
+                Me mijëra projekte të suksesshme dhe klientë të kënaqur në të
+                gjithë Tiranën dhe rrethinat.
+              </p>
+            </div>
+            <div class="reason-card">
+              <div class="reason-icon">🌟</div>
+              <h4>Materiale Premium</h4>
+              <p>
+                Përdorim ekskluzivisht produkte amerikane dhe gjermane të
+                certifikuara me standarde ndërkombëtare.
+              </p>
+            </div>
+            <div class="reason-card">
+              <div class="reason-icon">⏰</div>
+              <h4>Dorëzim në Kohë</h4>
+              <p>
+                Respektojmë afatet dhe sigurojmë përfundimin e projekteve sipas
+                planifikimit të rënë dakord.
+              </p>
+            </div>
+            <div class="reason-card">
+              <div class="reason-icon">💰</div>
+              <h4>Çmime Transparente</h4>
+              <p>
+                Oferta të detajuara dhe çmime konkurruese pa kosto të fshehura.
+                Konsultë dhe preventiv falas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title fade-in">Shërbimet Tona</h2>
+        <p class="section-subtitle fade-in">
+          Me një gamë të gjerë shërbimesh profesionale, ne jemi partneri juaj i
+          besueshëm për çdo projekt. Nga instalime elektrike moderne deri tek
+          dekorime artistike, çdo detaj trajtohet me kujdes maksimal.
+        </p>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=250&fit=crop"
+              alt="Punime Elektrike"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">⚡</div>
+              <h3 class="service-title">Punime Elektrike</h3>
+              <p class="service-description">
+                Instalime dhe riparime elektrike profesionale me standarde të
+                larta sigurie. Përdorim materiale cilësore dhe teknologji
+                moderne për të garantuar sisteme elektrike të sigurta dhe
+                efikase. Ekipi ynë i certifikuar ofron zgjidhje për ambiente
+                banimi dhe biznesi.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Instalime të reja</span>
+                <span class="service-tag">Riparime</span>
+                <span class="service-tag">Mirëmbajtje</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&h=250&fit=crop"
+              alt="Lyerje & Patinim"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">🎨</div>
+              <h3 class="service-title">Lyerje & Patinim</h3>
+              <p class="service-description">
+                Lyerje profesionale me ngjyra cilësore dhe patinim për një pamje
+                perfekte. Përdorim vetëm bojëra premium që garantojnë
+                qëndrueshmëri dhe pamje estetike. Nga ngjyrat klasike deri tek
+                dizajnet moderne, ne realizojmë vizionin tuaj me përsosmëri.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Lyerje muresh</span>
+                <span class="service-tag">Patinim profesional</span>
+                <span class="service-tag">Dizajn ngjyrash</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=400&h=250&fit=crop"
+              alt="Stuko Veneziane"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">✨</div>
+              <h3 class="service-title">Stuko Veneziane</h3>
+              <p class="service-description">
+                Stuko veneziane dekorative për një prekje elegante dhe luksoze
+                në shtëpinë tuaj. Teknikë artizanale që krijon efekte vizuale
+                mahnitëse me shkëlqim natyral. Ideale për ambiente prestigjioze,
+                dhoma ndenjeje dhe hapësira komerciale ekskluzive.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Efekte luksoze</span>
+                <span class="service-tag">Teknika tradicionale</span>
+                <span class="service-tag">Finishe moderne</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=400&h=250&fit=crop"
+              alt="Letra Murale"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">🏠</div>
+              <h3 class="service-title">Letra Murale</h3>
+              <p class="service-description">
+                Aplikim profesional i letrave murale moderne dhe tradicionale.
+                Ofrojmë një gamë të gjerë dizajnesh nga motive klasike deri tek
+                printime moderne 3D. Instalim preciz që garanton pamje të
+                përsosur pa defekte apo flluska ajri.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Dizajne moderne</span>
+                <span class="service-tag">Motive klasike</span>
+                <span class="service-tag">Printime 3D</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&h=250&fit=crop"
+              alt="Hidroizolim"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">💧</div>
+              <h3 class="service-title">Hidroizolim Profesional</h3>
+              <p class="service-description">
+                Për soleta, banjo, ballkone dhe shkallë - mbrojtje e plotë nga
+                lagështia. Përdorim produkte gjermane të certifikuara me
+                teknologji të avancuar. Zgjidhje të qëndrueshme që parandalojnë
+                dëmtimet strukturore dhe krijojnë ambiente të shëndetshme.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Soleta & taraca</span>
+                <span class="service-tag">Banjo & kuzhina</span>
+                <span class="service-tag">Ballkone & shkallë</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop"
+              alt="Garanci"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">🛡️</div>
+              <h3 class="service-title">Garanci 25-30 Vite</h3>
+              <p class="service-description">
+                Produkte gjermane dhe amerikane me garanci deri në 30 vite. Ne
+                qëndrojmë pas çdo projekti me garanci të plotë shkrimi.
+                Investimi juaj është i mbrojtur me certifikata garancie
+                ndërkombëtare dhe mbështetje teknike të vazhdueshme.
+              </p>
+              <div class="service-tags">
+                <span class="service-tag">Certifikate garancie</span>
+                <span class="service-tag">Produkte premium</span>
+                <span class="service-tag">Mbështetje teknike</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <h2 class="section-title fade-in">Produktet Tona Premium</h2>
+        <p class="section-subtitle fade-in">
+          Ne punojmë vetëm me markat më të mira në treg. Produktet tona janë
+          zgjedhur me kujdes për të garantuar rezultate superiore dhe
+          qëndrueshmëri maksimale. Të gjitha produktet vijnë me certifikata
+          origjinaliteti dhe garanci prodhuesi.
+        </p>
+        <div class="product-showcase">
+          <div class="product-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+              alt="Aqua Proof Primer"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Aqua Proof Primer</h3>
+              <p class="product-detail">
+                Primer hidroizolues cilësor për mbrojtje maksimale
+              </p>
+              <p class="product-description">
+                Formulë e avancuar që penetron thellë në sipërfaqe dhe krijon
+                një barrierë të papërshkueshme nga uji.
+              </p>
+            </div>
+          </div>
+          <div class="product-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=300&fit=crop"
+              alt="Rust-Oleum"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Rust-Oleum</h3>
+              <p class="product-detail">
+                Produkt amerikan premium - Lider botëror në mbrojtje
+              </p>
+              <p class="product-description">
+                Mbron sipërfaqet metalike nga ndryshku dhe korrozioni, duke
+                ofruar një finish të qëndrueshëm dhe estetik.
+              </p>
+            </div>
+          </div>
+          <div class="product-card fade-in">
+            <img
+              src="synth.png"
+              alt="Synthetic Silicone"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Synthetic Silicone</h3>
+              <p class="product-detail">
+                Silikon sintetik i avancuar për izolim perfekt
+              </p>
+              <p class="product-description">
+                Teknologji e fundit për mbyllje hermetike dhe fleksibilitet
+                maksimal në të gjitha kushtet atmosferike.
+              </p>
+            </div>
+          </div>
+          <div class="product-card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop"
+              alt="Hidroizolim"
+              class="product-image"
+            />
+            <div class="product-info">
+              <h3 class="product-name">Hidroizolim Gjerman</h3>
+              <p class="product-detail">25-30 vite garanci nga prodhuesi</p>
+              <p class="product-description">
+                Sistem komplet hidroizolimi me teknologji gjermane për soleta,
+                taraca dhe ambiente me lagështi të lartë.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="product-features fade-in">
+          <h3 class="features-title">
+            Përse Produktet Tona Janë Zgjedhja e Duhur
+          </h3>
+          <div class="features-grid">
+            <div class="feature-item">
+              <span class="feature-icon">🔬</span>
+              <h4>Teknologji e Avancuar</h4>
+              <p>
+                Formulime moderne që garantojnë performancë superiore dhe
+                jetëgjatësi.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🌍</span>
+              <h4>Standarde Ndërkombëtare</h4>
+              <p>
+                Të gjitha produktet plotësojnë normat më të larta evropiane dhe
+                amerikane.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🏭</span>
+              <h4>Prodhues të Njohur</h4>
+              <p>
+                Partnerë ekskluzivë me kompanitë lider në industrinë e
+                ndërtimit.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📜</span>
+              <h4>Certifikata Garancie</h4>
+              <p>
+                Çdo produkt vjen me dokumentacion të plotë dhe garanci të
+                zgjatur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <form class="contact-form fade-in">
+          <h2 class="form-title">Rezervo Konsultë Falas Tani</h2>
+          <div class="form-group">
+            <label for="name">Emri Juaj</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Numri i Telefonit</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Shërbimi që Kërkoni</label>
+            <input type="text" id="service" name="service" />
+          </div>
+          <div class="form-group">
+            <label for="message">Mesazhi</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Dërgo Kërkesën</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Doctor Home</h3>
+          <p>Leo Petritaj</p>
+          <p>Ekspertë në punime cilësore për shtëpinë tuaj</p>
+        </div>
+        <div class="footer-section">
+          <h3>Adresa</h3>
+          <p>Rruga Gani Toptani 70</p>
+          <p>Mëzezi, Tiranë, Albania 72</p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>📞 +355 69 123 4567</p>
+          <p>✉️ info@doctorhome.al</p>
+        </div>
+        <div class="footer-section">
+          <h3>Orari i Punës</h3>
+          <p>E Hënë - E Premte: 08:00 - 18:00</p>
+          <p>E Shtunë: 09:00 - 14:00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 Doctor Home - Leo Petritaj. Të gjitha të drejtat të
+          rezervuara.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Hide loader when page loads
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("loader").classList.add("hidden");
+        }, 1500);
+      });
+
+      // Mobile menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Hide/show navbar on scroll
+      let lastScroll = 0;
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 0) {
+          navbar.style.transform = "translateY(0)";
+          return;
+        }
+
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          navbar.style.transform = "translateY(-100%)";
+        } else {
+          navbar.style.transform = "translateY(0)";
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Form submission
+      document
+        .querySelector(".contact-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          // Animate button
+          const btn = e.target.querySelector(".submit-btn");
+          btn.textContent = "Duke dërguar...";
+
+          setTimeout(() => {
+            alert(
+              "Faleminderit për kërkesën tuaj! Do t'ju kontaktojmë së shpejti."
+            );
+            btn.textContent = "Dërgo Kërkesën";
+            e.target.reset();
+          }, 1500);
+        });
+
+      // Add floating animation to CTA button
+      const ctaButton = document.querySelector(".cta-button");
+      if (ctaButton) {
+        ctaButton.classList.add("floating");
+      }
+
+      // Dynamic color animation on service cards
+      const serviceCards = document.querySelectorAll(".service-card");
+      serviceCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+
+      // Add typing effect to hero title
+      const heroTitle = document.querySelector(".hero-title");
+      const text = "Doctor Home";
+      heroTitle.textContent = "";
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          heroTitle.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100);
+        }
+      }
+
+      // Start typing after loader hides
+      setTimeout(typeWriter, 2000);
+    </script>
+  </body>
+</html>
