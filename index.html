@@ -264,7 +264,7 @@
       @media (max-width: 768px) {
         .hero {
           min-height: 100vh;
-          background: #000000; /* CHANGED */
+          background: #000000;
           position: relative;
         }
 
@@ -315,7 +315,7 @@
       @media (max-width: 768px) and (orientation: landscape) {
         .hero {
           min-height: 150vh;
-          background: #000000; /* CHANGED */
+          background: #000000;
         }
 
         .hero::before {
@@ -1029,12 +1029,41 @@
         background: var(--white);
       }
 
-      .product-showcase {
+      .products-categories {
         max-width: 1200px;
         margin: 0 auto;
+      }
+
+      .product-category {
+        margin-bottom: 4rem;
+      }
+
+      .category-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid var(--primary-orange);
+        color: var(--black);
+      }
+
+      .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .product-dual {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .product-dual {
+          grid-template-columns: 1fr;
+        }
       }
 
       .product-card {
@@ -1043,6 +1072,7 @@
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: all 0.3s;
+        background: var(--white);
       }
 
       .product-card:hover {
@@ -1054,6 +1084,11 @@
         width: 100%;
         height: 300px;
         object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.1);
       }
 
       .product-info {
@@ -1737,74 +1772,173 @@
           qëndrueshmëri maksimale. Të gjitha produktet vijnë me certifikata
           origjinaliteti dhe garanci prodhuesi.
         </p>
-        <div class="product-showcase">
-          <div class="product-card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
-              alt="Aqua Proof Primer"
-              class="product-image"
-            />
-            <div class="product-info">
-              <h3 class="product-name">Aqua Proof Primer</h3>
-              <p class="product-detail">
-                Primer hidroizolues cilësor për mbrojtje maksimale
-              </p>
-              <p class="product-description">
-                Formulë e avancuar që penetron thellë në sipërfaqe dhe krijon
-                një barrierë të papërshkueshme nga uji.
-              </p>
+
+        <div class="products-categories">
+          <!-- Hidroizolues Section -->
+          <div class="product-category">
+            <h3 class="category-title">🛡️ Hidroizolues Gjerman Premium</h3>
+            <div class="product-dual">
+              <div class="product-card fade-in">
+                <img
+                  src="/hidrogj.jpg"
+                  alt="Hidroizolues Gjerman Premium"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Hidroizolues Gjerman Premium</h3>
+                  <p class="product-detail">25-30 vite garanci nga prodhuesi</p>
+                  <p class="product-description">
+                    Sistem hidroizolimi i avancuar me teknologji gjermane për
+                    mbrojtje maksimale nga lagështia. Ideal për taraca, soleta
+                    dhe ambiente me ekspozim të lartë ndaj ujit.
+                  </p>
+                </div>
+              </div>
+              <div class="product-card fade-in">
+                <img
+                  src="/hidrogj2.jpg"
+                  alt="Hidroizolues Gjerman Profesional"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Hidroizolues Gjerman Profesional</h3>
+                  <p class="product-detail">Certifikat ndërkombëtare cilësie</p>
+                  <p class="product-description">
+                    Formulë e përparuar që siguron rezistencë të jashtëzakonshme
+                    ndaj ujit, temperaturave ekstreme dhe rrezeve UV për dekada
+                    të tëra.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="product-card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=300&fit=crop"
-              alt="Rust-Oleum"
-              class="product-image"
-            />
-            <div class="product-info">
-              <h3 class="product-name">Rust-Oleum</h3>
-              <p class="product-detail">
-                Produkt amerikan premium - Lider botëror në mbrojtje
-              </p>
-              <p class="product-description">
-                Mbron sipërfaqet metalike nga ndryshku dhe korrozioni, duke
-                ofruar një finish të qëndrueshëm dhe estetik.
-              </p>
+
+          <!-- Bojra Gjermane Section -->
+          <div class="product-category">
+            <h3 class="category-title">🎨 Bojra Gjermane Cilësore</h3>
+            <div class="product-grid">
+              <div class="product-card fade-in">
+                <img
+                  src="/bojra-gjermane.jpg"
+                  alt="Bojra Gjermane Premium"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Bojra Gjermane Premium</h3>
+                  <p class="product-detail">Teknologji e avancuar gjermane</p>
+                  <p class="product-description">
+                    Bojra me pigmente superiore që ofrojnë mbulim perfekt,
+                    ngjyra të gjalla dhe qëndrueshmëri të jashtëzakonshme ndaj
+                    faktorëve atmosferikë.
+                  </p>
+                </div>
+              </div>
+              <div class="product-card fade-in">
+                <img
+                  src="/Bojra-Gjermane-ekologjike.jpg"
+                  alt="Bojra Gjermane Ekologjike"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Bojra Gjermane Ekologjike</h3>
+                  <p class="product-detail">Zero emetime, 100% të sigurta</p>
+                  <p class="product-description">
+                    Formulë ekologjike pa komponime toksike, ideale për ambiente
+                    të brendshme, dhoma fëmijësh dhe hapësira me ventilim të
+                    kufizuar.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="product-card fade-in">
-            <img
-              src="synth.png"
-              alt="Synthetic Silicone"
-              class="product-image"
-            />
-            <div class="product-info">
-              <h3 class="product-name">Synthetic Silicone</h3>
-              <p class="product-detail">
-                Silikon sintetik i avancuar për izolim perfekt
-              </p>
-              <p class="product-description">
-                Teknologji e fundit për mbyllje hermetike dhe fleksibilitet
-                maksimal në të gjitha kushtet atmosferike.
-              </p>
+
+          <!-- Bojra Amerikane Section -->
+          <div class="product-category">
+            <h3 class="category-title">🇺🇸 Bojra Amerikane Ekologjike</h3>
+            <div class="product-grid">
+              <div class="product-card fade-in">
+                <img
+                  src="/Bojra Amerikane ekologjike.jpg"
+                  alt="Bojra Amerikane Ekologjike"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Bojra Amerikane Ekologjike</h3>
+                  <p class="product-detail">Standarde të larta amerikane</p>
+                  <p class="product-description">
+                    Bojra premium me teknologji amerikane që kombinojnë
+                    performancën superiore me përgjegjësinë mjedisore.
+                    Certifikuar për cilësi dhe siguri.
+                  </p>
+                </div>
+              </div>
+              <div class="product-card fade-in">
+                <img
+                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=300&fit=crop"
+                  alt="Rust-Oleum Premium"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Rust-Oleum Premium</h3>
+                  <p class="product-detail">Lider botëror në mbrojtje</p>
+                  <p class="product-description">
+                    Mbrojtje e avancuar për sipërfaqe metalike dhe druri.
+                    Parandalon ndryshkun dhe korrozionin duke ofruar finish
+                    estetik dhe të qëndrueshëm.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="product-card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=300&fit=crop"
-              alt="Hidroizolim"
-              class="product-image"
-            />
-            <div class="product-info">
-              <h3 class="product-name">Hidroizolim Gjerman</h3>
-              <p class="product-detail">25-30 vite garanci nga prodhuesi</p>
-              <p class="product-description">
-                Sistem komplet hidroizolimi me teknologji gjermane për soleta,
-                taraca dhe ambiente me lagështi të lartë.
-              </p>
+
+          <!-- Bojra Dekorative Italiane Section -->
+          <div class="product-category">
+            <h3 class="category-title">
+              🇮🇹 Bojra Dekorative Italiane Giorgio Greasan
+            </h3>
+            <div class="product-dual">
+              <div class="product-card fade-in">
+                <img
+                  src="/it.jpg"
+                  alt="Giorgio Greasan Luxury"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Giorgio Greasan Luxury</h3>
+                  <p class="product-detail">Elegancë italiane autentike</p>
+                  <p class="product-description">
+                    Bojra dekorative luksoze me efekte speciale që krijojnë
+                    ambiente ekskluzive. Teknika artizanale italiane për finishe
+                    unike.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Premium Products -->
+          <div class="product-category">
+            <h3 class="category-title">🔧 Produkte Speciale & Aksesorë</h3>
+            <div class="product-grid">
+              <div class="product-card fade-in">
+                <img
+                  src="/synth.png"
+                  alt="Synthetic Silicone"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name">Synthetic Silicone</h3>
+                  <p class="product-detail">Mbyllje hermetike perfekte</p>
+                  <p class="product-description">
+                    Silikon i avancuar për izolim dhe mbyllje fugash. Rezistent
+                    ndaj temperaturave ekstreme dhe lëvizjeve strukturore.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="product-features fade-in">
           <h3 class="features-title">
             Përse Produktet Tona Janë Zgjedhja e Duhur
@@ -1848,31 +1982,14 @@
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-container">
-        <form class="contact-form fade-in">
-          <h2 class="form-title">Rezervo Konsultë Falas Tani</h2>
-          <div class="form-group">
-            <label for="name">Emri Juaj</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Numri i Telefonit</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="service">Shërbimi që Kërkoni</label>
-            <input type="text" id="service" name="service" />
-          </div>
-          <div class="form-group">
-            <label for="message">Mesazhi</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Dërgo Kërkesën</button>
-        </form>
+      <div style="max-width: 100%; width: 100%; padding: 0">
+        <iframe
+          aria-label="Rezervo Konsultë Falas Tani"
+          frameborder="0"
+          style="height: 950px; width: 100%; border: none; display: block"
+          src="https://forms.zohopublic.eu/bitcryptics1/form/RezervoKonsultFalasTani/formperma/GtzMQPBuz-sU7FU-sG3ZpgVrIS5YydQdkrp38V6cOgA"
+        >
+        </iframe>
       </div>
     </section>
 
