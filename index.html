@@ -329,6 +329,7 @@
         --black: #1a1a1a;
         --white: #ffffff;
         --gray: #f5f5f5;
+        --dark-gray: #333333;
       }
 
       html {
@@ -407,9 +408,9 @@
 
       .nav-container {
         position: relative;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -417,7 +418,7 @@
 
       @media (max-width: 768px) {
         .nav-container {
-          padding: 0.8rem 1.5rem;
+          padding: 0.8rem 1rem;
         }
       }
 
@@ -714,9 +715,9 @@
       .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 2rem;
+        padding: 1rem;
         padding-top: 10rem;
         padding-bottom: 4rem;
         color: var(--white);
@@ -938,7 +939,7 @@
 
       /* Color Banner Section */
       .color-banner {
-        padding: 4rem 2rem;
+        padding: 3rem 1rem;
         background: linear-gradient(
           135deg,
           var(--primary-orange) 0%,
@@ -969,7 +970,7 @@
       .banner-content {
         position: relative;
         z-index: 2;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         text-align: center;
         color: var(--white);
@@ -1025,12 +1026,12 @@
 
       /* About Section */
       .about {
-        padding: 5rem 2rem;
+        padding: 4rem 1rem;
         background: var(--white);
       }
 
       .about-container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
@@ -1189,9 +1190,310 @@
         line-height: 1.6;
       }
 
-      /* Services Section */
+      /* NEW FEATURED SERVICES SECTION */
+      .featured-services {
+        padding: 4rem 1rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #fff 50%, #f8f9fa 100%);
+        position: relative;
+      }
+
+      .featured-services::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+      }
+
+      .featured-services-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 4rem;
+      }
+
+      .featured-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+      }
+
+      .featured-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      /* Featured Services Grid */
+      .featured-grid {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      /* Desktop Layout */
+      @media (min-width: 1025px) {
+        .featured-grid {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: auto;
+        }
+
+        .featured-card.large {
+          grid-column: span 2;
+          grid-row: span 1;
+        }
+
+        .featured-card.tall {
+          grid-row: span 2;
+        }
+      }
+
+      /* Tablet Layout */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .featured-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .featured-card.large {
+          grid-column: span 2;
+        }
+      }
+
+      /* Mobile Layout */
+      @media (max-width: 768px) {
+        .featured-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .featured-card {
+          width: 100%;
+        }
+      }
+
+      /* Featured Service Cards */
+      .featured-card {
+        background: var(--white);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .featured-media {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background: var(--gray);
+      }
+
+      .featured-card.large .featured-media {
+        height: 350px;
+      }
+
+      @media (max-width: 768px) {
+        .featured-media {
+          height: 200px;
+        }
+
+        .featured-card.large .featured-media {
+          height: 250px;
+        }
+      }
+
+      .featured-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .featured-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+        transition: transform 0.6s ease;
+      }
+
+      .featured-card:hover .featured-media img,
+      .featured-card:hover .featured-media video {
+        transform: scale(1.1);
+      }
+
+      .featured-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .featured-card.large .featured-content {
+        padding: 2.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .featured-content {
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      .featured-badge {
+        display: inline-block;
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        color: var(--white);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        animation: pulse 3s infinite;
+      }
+
+      .featured-service-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--black);
+        font-weight: 700;
+      }
+
+      .featured-card.large .featured-service-title {
+        font-size: 2.2rem;
+      }
+
+      .featured-service-description {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        flex-grow: 1;
+      }
+
+      .featured-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: auto;
+      }
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 170, 76, 0.1);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .highlight-item:hover {
+        background: rgba(255, 170, 76, 0.2);
+        transform: translateX(5px);
+      }
+
+      .highlight-icon {
+        color: var(--primary-orange);
+        font-size: 1.1rem;
+      }
+
+      /* Service Navigation Tabs */
+      .service-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .service-tabs {
+          flex-direction: column;
+          align-items: stretch;
+          max-width: 400px;
+          margin: 0 auto 3rem;
+        }
+      }
+
+      .service-tab {
+        padding: 1rem 2rem;
+        background: var(--white);
+        border: 2px solid var(--gray);
+        border-radius: 30px;
+        font-weight: 600;
+        color: var(--dark-gray);
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 1rem;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .service-tab {
+          padding: 1.2rem 1.5rem;
+          font-size: 1.1rem;
+        }
+      }
+
+      .service-tab:hover {
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        color: var(--white);
+        border-color: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 91, 76, 0.3);
+      }
+
+      .service-tab.active {
+        background: linear-gradient(
+          90deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        color: var(--white);
+        border-color: transparent;
+        box-shadow: 0 5px 20px rgba(255, 91, 76, 0.3);
+      }
+
+      /* Services Section (Existing services) */
       .services {
-        padding: 5rem 2rem;
+        padding: 4rem 1rem;
         background: var(--gray);
       }
 
@@ -1229,7 +1531,7 @@
       }
 
       .services-grid {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1334,12 +1636,12 @@
 
       /* Products Section */
       .products {
-        padding: 5rem 2rem;
+        padding: 4rem 1rem;
         background: var(--white);
       }
 
       .products-categories {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
@@ -1478,7 +1780,7 @@
 
       /* Contact Form Section */
       .contact {
-        padding: 5rem 2rem;
+        padding: 4rem 1rem;
         background: linear-gradient(
           135deg,
           var(--primary-orange),
@@ -1587,11 +1889,11 @@
       footer {
         background: var(--black);
         color: var(--white);
-        padding: 3rem 2rem 2rem;
+        padding: 3rem 1rem 2rem;
       }
 
       .footer-content {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1790,7 +2092,10 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home" class="nav-link">Ballina</a></li>
           <li><a href="#about" class="nav-link">Rreth Nesh</a></li>
-          <li><a href="#services" class="nav-link">Shërbimet</a></li>
+          <li>
+            <a href="#featured-services" class="nav-link">Shërbimet Speciale</a>
+          </li>
+          <li><a href="#services" class="nav-link">Të Gjitha Shërbimet</a></li>
           <li><a href="#products" class="nav-link">Produktet</a></li>
           <li><a href="#contact" class="nav-link">Kontakt</a></li>
         </ul>
@@ -1957,9 +2262,393 @@
         </div>
       </section>
 
+      <!-- NEW FEATURED SERVICES SECTION -->
+      <section class="featured-services" id="featured-services">
+        <div class="featured-services-header">
+          <h2 class="featured-title fade-in">Shërbimet Tona Speciale</h2>
+          <p class="featured-subtitle fade-in">
+            Specializohemi në punime dekorative moderne dhe teknologji të
+            avancuara për transformimin e hapësirave tuaja
+          </p>
+        </div>
+
+        <div class="service-tabs fade-in">
+          <button class="service-tab active" data-filter="all">
+            Të Gjitha
+          </button>
+          <button class="service-tab" data-filter="decorative">
+            Dekorative
+          </button>
+          <button class="service-tab" data-filter="technical">Teknike</button>
+          <button class="service-tab" data-filter="isolation">Izolim</button>
+        </div>
+
+        <div class="featured-grid">
+          <!-- Punime Decorative të ndryshme -->
+          <article
+            class="featured-card large fade-in"
+            data-category="decorative"
+          >
+            <div class="featured-media">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="https://images.unsplash.com/photo-1615876063860-d971f6dca5dc?w=800&h=600&fit=crop"
+              >
+                <source src="/dekorative.mp4" type="video/mp4" />
+                <img
+                  src="https://images.unsplash.com/photo-1615876063860-d971f6dca5dc?w=800&h=600&fit=crop"
+                  alt="Punime Decorative"
+                  loading="lazy"
+                />
+              </video>
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Më e kërkuara</span>
+              <h3 class="featured-service-title">
+                Punime Dekorative të Ndryshme
+              </h3>
+              <p class="featured-service-description">
+                Transformoni muret tuaj në vepra arti me teknikat tona moderne
+                dekorative. Nga efekte 3D deri tek motive artistike, ne krijojmë
+                ambiente unike që pasqyrojnë personalitetin tuaj.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">✨</span>
+                  <span>Efekte 3D</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎨</span>
+                  <span>Motive artistike</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🏆</span>
+                  <span>Dizajn personalizuar</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime Micro-cimento -->
+          <article class="featured-card fade-in" data-category="decorative">
+            <div class="featured-media">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&h=400&fit=crop"
+              >
+                <source src="/micro-cimento.mp4" type="video/mp4" />
+                <img
+                  src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?w=600&h=400&fit=crop"
+                  alt="Micro-cimento Modern"
+                  loading="lazy"
+                />
+              </video>
+            </div>
+            <div class="featured-content">
+              <h3 class="featured-service-title">Punime Micro-cimento</h3>
+              <p class="featured-service-description">
+                Sipërfaqe moderne pa fuga me micro-cimento. Ideal për banjo,
+                kuzhina dhe dysheme industriale me pamje minimaliste.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">💧</span>
+                  <span>Rezistent ndaj ujit</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔧</span>
+                  <span>Pa fuga</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stucco Veneziane -->
+          <article class="featured-card fade-in" data-category="decorative">
+            <div class="featured-media">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&h=400&fit=crop"
+              >
+                <source src="/veneciane.mp4" type="video/mp4" />
+                <img
+                  src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&h=400&fit=crop"
+                  alt="Stucco Veneziane"
+                  loading="lazy"
+                />
+              </video>
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Luks</span>
+              <h3 class="featured-service-title">Stucco Veneziane</h3>
+              <p class="featured-service-description">
+                Eleganca klasike italiane me stuko veneziane autentike. Krijojmë
+                sipërfaqe të lëmuara si mermeri me shkëlqim natyral.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">💎</span>
+                  <span>Shkëlqim natyral</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🇮🇹</span>
+                  <span>Teknikë italiane</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Effeto Marmo -->
+          <article
+            class="featured-card tall fade-in"
+            data-category="decorative"
+          >
+            <div class="featured-media">
+              <img src="effeto-marmo.jpg" alt="Effeto Marmo" loading="lazy" />
+            </div>
+            <div class="featured-content">
+              <h3 class="featured-service-title">Effeto Marmo</h3>
+              <p class="featured-service-description">
+                Rikrijoni bukurinë e mermerit natyral me teknika speciale. Çdo
+                mur bëhet një vepër arti unike me vena dhe nuanca të
+                personalizuara.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎨</span>
+                  <span>Vena natyrore</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">✨</span>
+                  <span>Efekt mermeri</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime me Epoxide për dysheme -->
+          <article
+            class="featured-card large fade-in"
+            data-category="technical"
+          >
+            <div class="featured-media">
+              <img
+                src="https://images.unsplash.com/photo-1609767500458-d2a133f61cab?w=800&h=400&fit=crop"
+                alt="Dysheme Epoxide"
+                loading="lazy"
+              />
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Inovativ</span>
+              <h3 class="featured-service-title">
+                Punime me Epoxide për Dysheme
+              </h3>
+              <p class="featured-service-description">
+                Dysheme industriale dhe moderne me rrëshirë epokside.
+                Rezistente, të personalizueshme me ngjyra dhe efekte 3D
+                spektakolare.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">💪</span>
+                  <span>Super rezistente</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎨</span>
+                  <span>Efekte 3D</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🧪</span>
+                  <span>Kimikisht rezistente</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime Gipsi -->
+          <article class="featured-card fade-in" data-category="technical">
+            <div class="featured-media">
+              <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=400&fit=crop"
+                alt="Punime Gipsi"
+                loading="lazy"
+              />
+            </div>
+            <div class="featured-content">
+              <h3 class="featured-service-title">Punime Gipsi</h3>
+              <p class="featured-service-description">
+                Tavane false moderne, ndarje dhomash elegante dhe dekorime
+                gipsi. Dizajne të personalizuara me ndriçim LED të integruar.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">💡</span>
+                  <span>LED i integruar</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">📐</span>
+                  <span>Dizajn modern</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime Patinime & Lyerje -->
+          <article class="featured-card fade-in" data-category="technical">
+            <div class="featured-media">
+              <img
+                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop"
+                alt="Punime Patinime dhe Lyerje"
+                loading="lazy"
+              />
+            </div>
+            <div class="featured-content">
+              <h3 class="featured-service-title">Punime Patinime & Lyerje</h3>
+              <p class="featured-service-description">
+                Lyerje profesionale dhe patinim artistik për ambiente unike.
+                Përdorim bojra premium dhe teknika moderne aplikimi.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎨</span>
+                  <span>Bojra premium</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">✨</span>
+                  <span>Patinim artistik</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime Termoizolimi (kapotë) -->
+          <article class="featured-card fade-in" data-category="isolation">
+            <div class="featured-media">
+              <img
+                src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&h=400&fit=crop"
+                alt="Termoizolim Kapotë"
+                loading="lazy"
+              />
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Efiçiencë</span>
+              <h3 class="featured-service-title">
+                Punime Termoizolimi (Kapotë)
+              </h3>
+              <p class="featured-service-description">
+                Izolim termik profesional për fasada. Kurseni energji dhe
+                përmirësoni komfortin me sistemin tonë të kapotës me garanci.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🌡️</span>
+                  <span>Kursim energjie</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🏠</span>
+                  <span>Komfort termik</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Punime Hidro Izolim & Termo Izolim për Taraca -->
+          <article
+            class="featured-card large fade-in"
+            data-category="isolation"
+          >
+            <div class="featured-media">
+              <img
+                src="https://images.unsplash.com/photo-1631700611307-37dbcb89ef7e?w=800&h=400&fit=crop"
+                alt="Hidroizolim dhe Termoizolim Taraca"
+                loading="lazy"
+              />
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Garanci 30 vite</span>
+              <h3 class="featured-service-title">
+                Hidroizolim & Termoizolim për Taraca
+              </h3>
+              <p class="featured-service-description">
+                Mbrojtje e plotë për taracat tuaja me sisteme moderne
+                hidroizolimi dhe termoizolimi. Produkte gjermane me garanci deri
+                në 30 vite për qetësinë tuaj absolute.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">💧</span>
+                  <span>100% i papërshkueshëm</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🛡️</span>
+                  <span>30 vite garanci</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🇩🇪</span>
+                  <span>Produkte gjermane</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Letra Murale -->
+          <article class="featured-card fade-in" data-category="decorative">
+            <div class="featured-media">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&h=400&fit=crop"
+              >
+                <source src="/letra-murale.mp4" type="video/mp4" />
+                <img
+                  src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&h=400&fit=crop"
+                  alt="Letra Murale Moderne"
+                  loading="lazy"
+                />
+              </video>
+            </div>
+            <div class="featured-content">
+              <span class="featured-badge">Trending</span>
+              <h3 class="featured-service-title">Letra Murale</h3>
+              <p class="featured-service-description">
+                Aplikim profesional i letrave murale moderne dhe tradicionale.
+                Ofrojmë një gamë të gjerë dizajnesh nga motive klasike deri tek
+                printime moderne 3D. Instalim preciz që garanton pamje të
+                përsosur pa defekte apo flluska ajri.
+              </p>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎨</span>
+                  <span>Dizajne moderne</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🖼️</span>
+                  <span>Printime 3D</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">✨</span>
+                  <span>Instalim perfekt</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="services" id="services">
         <div class="container">
-          <h2 class="section-title fade-in">Shërbimet Tona</h2>
+          <h2 class="section-title fade-in">Shërbimet Tona të Tjera</h2>
           <p class="section-subtitle fade-in">
             Me një gamë të gjerë shërbimesh profesionale, ne jemi partneri juaj
             i besueshëm për çdo projekt. Nga instalime elektrike moderne deri
@@ -2011,96 +2700,6 @@
                   <span class="service-tag">Instalime ujësjellësi</span>
                   <span class="service-tag">Riparim tubacionesh</span>
                   <span class="service-tag">Sisteme ngrohje</span>
-                </div>
-              </div>
-            </article>
-            <article class="service-card fade-in">
-              <img
-                src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&h=250&fit=crop"
-                alt="Lyerje dhe Patinim Profesional Tiranë"
-                class="service-image"
-                loading="lazy"
-              />
-              <div class="service-content">
-                <div class="service-icon">🎨</div>
-                <h3 class="service-title">Lyerje & Patinim</h3>
-                <p class="service-description">
-                  Lyerje profesionale me ngjyra cilësore dhe patinim për një
-                  pamje perfekte. Përdorim vetëm bojëra premium që garantojnë
-                  qëndrueshmëri dhe pamje estetike. Nga ngjyrat klasike deri tek
-                  dizajnet moderne, ne realizojmë vizionin tuaj me përsosmëri.
-                </p>
-                <div class="service-tags">
-                  <span class="service-tag">Lyerje muresh</span>
-                  <span class="service-tag">Patinim profesional</span>
-                  <span class="service-tag">Dizajn ngjyrash</span>
-                </div>
-              </div>
-            </article>
-            <article class="service-card fade-in">
-              <img
-                src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=400&h=250&fit=crop"
-                alt="Stuko Veneziane Dekorative Tiranë"
-                class="service-image"
-                loading="lazy"
-              />
-              <div class="service-content">
-                <div class="service-icon">✨</div>
-                <h3 class="service-title">Isitino Micro-cimento</h3>
-                <p class="service-description">
-                  Punime dekorative dhe shumë rezistente ndaj lagështisë.
-                </p>
-                <div class="service-tags">
-                  <span class="service-tag">Efekte luksoze</span>
-                  <span class="service-tag">Teknika tradicionale</span>
-                  <span class="service-tag">Finishe moderne</span>
-                </div>
-              </div>
-            </article>
-            <article class="service-card fade-in">
-              <img
-                src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=400&h=250&fit=crop"
-                alt="Letra Murale Moderne Tiranë"
-                class="service-image"
-                loading="lazy"
-              />
-              <div class="service-content">
-                <div class="service-icon">🏠</div>
-                <h3 class="service-title">Letra Murale</h3>
-                <p class="service-description">
-                  Aplikim profesional i letrave murale moderne dhe tradicionale.
-                  Ofrojmë një gamë të gjerë dizajnesh nga motive klasike deri
-                  tek printime moderne 3D. Instalim preciz që garanton pamje të
-                  përsosur pa defekte apo flluska ajri.
-                </p>
-                <div class="service-tags">
-                  <span class="service-tag">Dizajne moderne</span>
-                  <span class="service-tag">Motive klasike</span>
-                  <span class="service-tag">Printime 3D</span>
-                </div>
-              </div>
-            </article>
-            <article class="service-card fade-in">
-              <img
-                src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=400&h=250&fit=crop"
-                alt="Hidroizolim Profesional Tarrace Tiranë"
-                class="service-image"
-                loading="lazy"
-              />
-              <div class="service-content">
-                <div class="service-icon">💧</div>
-                <h3 class="service-title">Hidroizolim Profesional</h3>
-                <p class="service-description">
-                  Për soleta, banjo, ballkone dhe shkallë - mbrojtje e plotë nga
-                  lagështia. Përdorim produkte gjermane të certifikuara me
-                  teknologji të avancuar. Zgjidhje të qëndrueshme që
-                  parandalojnë dëmtimet strukturore dhe krijojnë ambiente të
-                  shëndetshme.
-                </p>
-                <div class="service-tags">
-                  <span class="service-tag">Soleta & taraca</span>
-                  <span class="service-tag">Banjo & kuzhina</span>
-                  <span class="service-tag">Ballkone & shkallë</span>
                 </div>
               </div>
             </article>
@@ -2554,6 +3153,34 @@
 
       // Start typing after loader hides
       setTimeout(typeWriter, 2000);
+
+      // Service tabs filtering
+      const serviceTabs = document.querySelectorAll(".service-tab");
+      const featuredCards = document.querySelectorAll(".featured-card");
+
+      serviceTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs
+          serviceTabs.forEach((t) => t.classList.remove("active"));
+          // Add active class to clicked tab
+          tab.classList.add("active");
+
+          const filter = tab.getAttribute("data-filter");
+
+          // Filter cards
+          featuredCards.forEach((card) => {
+            if (filter === "all") {
+              card.style.display = "flex";
+            } else {
+              if (card.getAttribute("data-category") === filter) {
+                card.style.display = "flex";
+              } else {
+                card.style.display = "none";
+              }
+            }
+          });
+        });
+      });
 
       // Structured Data for Rich Snippets
       const structuredData = {
