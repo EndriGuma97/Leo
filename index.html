@@ -29,6 +29,8 @@
 
     <!-- Alternate Language -->
     <link rel="alternate" hreflang="sq" href="https://doctorhome.al/" />
+    <link rel="alternate" hreflang="en" href="https://doctorhome.al/en" />
+    <link rel="alternate" hreflang="de" href="https://doctorhome.al/de" />
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website" />
@@ -80,239 +82,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://images.unsplash.com" />
 
-    <!-- Structured Data - Local Business Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Doctor Home",
-        "alternateName": "Leo Petritaj",
-        "description": "Color Design Leo Petritaj - lider në Tiranë për punime cilësore në shtëpi dhe ambiente biznesi. Specialistë në lyerje, hidroizolim, punime elektrike, stuko veneziane.",
-        "image": "https://doctorhome.al/logo.png",
-        "@id": "https://doctorhome.al",
-        "url": "https://doctorhome.al",
-        "telephone": "+355691234567",
-        "email": "info@doctorhome.al",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rruga Gani Toptani 70",
-          "addressLocality": "Mëzezi, Tiranë",
-          "postalCode": "72",
-          "addressCountry": "AL"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 41.3275,
-          "longitude": 19.8187
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "08:00",
-            "closes": "18:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "14:00"
-          }
-        ],
-        "priceRange": "€€",
-        "servesCuisine": "Albanian",
-        "areaServed": {
-          "@type": "City",
-          "name": "Tiranë"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Shërbimet",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Lyerje dhe Patinim",
-                "description": "Lyerje profesionale me bojra cilësore gjermane dhe amerikane"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Hidroizolim",
-                "description": "Hidroizolim profesional për taraca, soleta, banjo me garanci 30 vite"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Punime Elektrike",
-                "description": "Instalime dhe riparime elektrike me standarde të larta sigurie"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Stuko Veneziane",
-                "description": "Aplikim profesional i stuko veneziane dekorative"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Punime Hidraulike",
-                "description": "Instalime dhe riparime hidraulike profesionale"
-              }
-            }
-          ]
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Arben Hoxha"
-            },
-            "reviewBody": "Punë profesionale dhe cilësore. Leo dhe ekipi i tij transformuan plotësisht apartamentin tim."
-          }
-        ]
-      }
-    </script>
-
-    <!-- Service Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Punime Ndërtimi dhe Rinovimi",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Doctor Home - Leo Petritaj"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Katalogu i Shërbimeve",
-          "itemListElement": [
-            {
-              "@type": "OfferCatalog",
-              "name": "Lyerje Shtëpish",
-              "description": "Lyerje profesionale me bojra premium gjermane dhe amerikane"
-            },
-            {
-              "@type": "OfferCatalog",
-              "name": "Hidroizolim Tarrace",
-              "description": "Hidroizolim me produkte gjermane, garanci 25-30 vite"
-            },
-            {
-              "@type": "OfferCatalog",
-              "name": "Punime Elektrike",
-              "description": "Instalime dhe riparime elektrike të sigurta"
-            },
-            {
-              "@type": "OfferCatalog",
-              "name": "Punime Hidraulike",
-              "description": "Instalime dhe riparime hidraulike profesionale"
-            }
-          ]
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Tiranë, Shqipëri"
-        }
-      }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Sa vite garanci ofroni për hidroizolimin?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ne ofrojmë garanci 25-30 vite për të gjitha punimet e hidroizolimit, duke përdorur produkte premium gjermane me certifikata ndërkombëtare."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Çfarë bojrash përdorni për lyerjen e shtëpive?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Përdorim ekskluzivisht bojra cilësore gjermane dhe amerikane nga prodhuesit më të mirë si Giorgio Greasan, me certifikata origjinaliteti dhe garanci prodhuesi."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "A ofroni konsultë falas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Po, ne ofrojmë konsultë dhe preventiv falas për të gjitha shërbimet tona. Kontaktoni për të rezervuar një takim."
-            }
-          }
-        ]
-      }
-    </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Ballina",
-            "item": "https://doctorhome.al"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Shërbimet",
-            "item": "https://doctorhome.al/#services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Produktet",
-            "item": "https://doctorhome.al/#products"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Kontakt",
-            "item": "https://doctorhome.al/#contact"
-          }
-        ]
-      }
-    </script>
-
     <style>
       * {
         margin: 0;
@@ -342,6 +111,132 @@
         line-height: 1.6;
         color: var(--black);
         overflow-x: hidden;
+      }
+
+      /* Language Switcher Styles */
+      .language-switcher {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 15px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-orange),
+          var(--primary-red)
+        );
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(255, 91, 76, 0.3);
+        margin-left: auto; /* Change from 2rem to auto */
+        margin-right: 60px; /* Add space for hamburger */
+        z-index: 1002; /* Ensure it's above nav-menu */
+      }
+
+      .language-switcher:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 91, 76, 0.4);
+      }
+
+      .current-lang {
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .lang-flag {
+        width: 20px;
+        height: 15px;
+        display: inline-block;
+      }
+
+      .language-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 10px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1001;
+      }
+
+      .language-switcher.active .language-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .lang-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px;
+        cursor: pointer;
+        transition: background 0.3s;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        color: var(--dark-gray);
+      }
+
+      .lang-option:hover {
+        background: var(--gray);
+      }
+
+      .lang-option.active {
+        background: linear-gradient(
+          to right,
+          rgba(255, 170, 76, 0.2),
+          rgba(255, 91, 76, 0.2)
+        );
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .language-switcher {
+          margin-left: auto;
+          margin-right: 50px; /* Space for hamburger */
+          padding: 6px 12px;
+          position: relative;
+          z-index: 1002;
+        }
+
+        .hamburger {
+          display: flex;
+          position: absolute;
+          right: 1rem;
+          z-index: 1003;
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 100px;
+          flex-direction: column;
+          background: var(--white);
+          width: 100%;
+          padding: 2rem;
+          transition: 0.3s;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          z-index: 999; /* Below language switcher */
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
       }
 
       /* Loading Animation */
@@ -415,10 +310,12 @@
         justify-content: space-between;
         align-items: center;
       }
-
       @media (max-width: 768px) {
         .nav-container {
           padding: 0.8rem 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
       }
 
@@ -445,6 +342,7 @@
         display: flex;
         list-style: none;
         gap: 2rem;
+        align-items: center;
       }
 
       .nav-link {
@@ -1778,7 +1676,7 @@
         line-height: 1.6;
       }
 
-      /* Contact Form Section */
+      /* Contact Form Section - FIXED */
       .contact {
         padding: 4rem 1rem;
         background: linear-gradient(
@@ -1787,7 +1685,7 @@
           var(--primary-red)
         );
         position: relative;
-        overflow: hidden;
+        overflow: hidden; /* Change back to hidden */
       }
 
       .contact::before {
@@ -1803,6 +1701,38 @@
           transparent 70%
         );
         animation: rotate 30s linear infinite;
+        pointer-events: none;
+        z-index: 1; /* Add z-index */
+      }
+
+      .contact-container {
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2; /* Reduce z-index */
+      }
+
+      .iframe-container {
+        position: relative;
+        z-index: 3; /* Reduce z-index */
+        background: transparent;
+        border-radius: 20px;
+        overflow: visible;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .iframe-container iframe {
+        position: relative;
+        z-index: 4; /* Reduce z-index */
+        width: 100%;
+        height: 950px;
+        border: none;
+        display: block;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
       }
 
       @keyframes rotate {
@@ -1815,74 +1745,41 @@
       }
 
       .contact-container {
-        max-width: 800px;
+        max-width: 100%;
         margin: 0 auto;
         position: relative;
-        z-index: 1;
+        z-index: 10; /* Increased z-index */
       }
 
-      .contact-form {
-        background: var(--white);
-        padding: 3rem;
+      /* Iframe container fix */
+      .iframe-container {
+        position: relative;
+        z-index: 100; /* High z-index for iframe container */
+        background: transparent;
+        border-radius: 20px;
+        overflow: visible;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .iframe-container iframe {
+        position: relative;
+        z-index: 101; /* Even higher z-index for iframe itself */
+        width: 100%;
+        height: 950px;
+        border: none;
+        display: block;
+        background: white;
         border-radius: 20px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
       }
 
-      .form-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        color: var(--black);
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: var(--black);
-        font-weight: 500;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 1rem;
-        border: 2px solid #e0e0e0;
-        border-radius: 10px;
-        font-size: 1rem;
-        transition: all 0.3s;
-      }
-
-      .form-group input:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: var(--primary-red);
-        box-shadow: 0 0 0 3px rgba(255, 91, 76, 0.1);
-      }
-
-      .submit-btn {
-        width: 100%;
-        padding: 1.2rem;
-        background: linear-gradient(
-          90deg,
-          var(--primary-orange),
-          var(--primary-red)
-        );
-        color: var(--white);
-        border: none;
-        border-radius: 10px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-
-      .submit-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      /* Mobile responsive iframe */
+      @media (max-width: 768px) {
+        .iframe-container iframe {
+          height: 1100px; /* Slightly taller on mobile for better usability */
+        }
       }
 
       /* Footer */
@@ -1962,7 +1859,8 @@
       /* Mobile Responsive */
       @media (max-width: 768px) {
         .logo {
-          height: 60px;
+          height: 80px;
+          flex-shrink: 0;
         }
 
         .nav-menu {
@@ -2025,10 +1923,6 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
-        .contact-form {
-          padding: 2rem;
-        }
-
         .services-grid,
         .product-showcase {
           grid-template-columns: 1fr;
@@ -2084,21 +1978,67 @@
 
     <nav id="navbar" role="navigation" aria-label="Navigimi kryesor">
       <div class="nav-container">
-        <img
-          src="/logo.png"
-          alt="Doctor Home Logo - Lyerje dhe Punime Cilësore Tiranë"
-          class="logo"
-        />
+        <img src="/logo.png" alt="Doctor Home Logo" class="logo" />
+
+        <!-- Language switcher moved outside nav-menu for mobile visibility -->
+        <div class="language-switcher" id="languageSwitcher">
+          <div class="current-lang">
+            <span class="lang-flag" id="currentFlag">🇦🇱</span>
+            <span id="currentLangText">SQ</span>
+            <span>▼</span>
+          </div>
+          <div class="language-dropdown">
+            <button class="lang-option" data-lang="sq">
+              <span class="lang-flag">🇦🇱</span>
+              <span>Shqip</span>
+            </button>
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇬🇧</span>
+              <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="de">
+              <span class="lang-flag">🇩🇪</span>
+              <span>Deutsch</span>
+            </button>
+          </div>
+        </div>
+
         <ul class="nav-menu" id="navMenu">
-          <li><a href="#home" class="nav-link">Ballina</a></li>
-          <li><a href="#about" class="nav-link">Rreth Nesh</a></li>
           <li>
-            <a href="#featured-services" class="nav-link">Shërbimet Speciale</a>
+            <a href="#home" class="nav-link" data-translate="nav_home"
+              >Ballina</a
+            >
           </li>
-          <li><a href="#services" class="nav-link">Të Gjitha Shërbimet</a></li>
-          <li><a href="#products" class="nav-link">Produktet</a></li>
-          <li><a href="#contact" class="nav-link">Kontakt</a></li>
+          <li>
+            <a href="#about" class="nav-link" data-translate="nav_about"
+              >Rreth Nesh</a
+            >
+          </li>
+          <li>
+            <a
+              href="#featured-services"
+              class="nav-link"
+              data-translate="nav_featured_services"
+              >Shërbimet Speciale</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="nav-link" data-translate="nav_services"
+              >Të Gjitha Shërbimet</a
+            >
+          </li>
+          <li>
+            <a href="#products" class="nav-link" data-translate="nav_products"
+              >Produktet</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" data-translate="nav_contact"
+              >Kontakt</a
+            >
+          </li>
         </ul>
+
         <div class="hamburger" id="hamburger" aria-label="Menu navigimi">
           <span></span>
           <span></span>
@@ -2111,57 +2051,47 @@
       <section class="hero" id="home">
         <div class="hero-content">
           <h1 class="hero-title">Doctor Home</h1>
-          <h2 class="hero-subtitle">
+          <h2 class="hero-subtitle" data-translate="hero_subtitle">
             Leo Petritaj - Ekspertë në Punime Cilësore
           </h2>
-          <p class="hero-description">
+          <p class="hero-description" data-translate="hero_description">
             Transformoni hapësirën tuaj me ngjyrat dhe dizajnin që ëndërroni! Me
             përvojë 15-vjeçare në industri, ne ofrojmë zgjidhje profesionale për
             çdo nevojë të shtëpisë suaj. Nga punimet elektrike deri tek dekorimi
             më modern, ekipi ynë garanton cilësi të lartë dhe çmime konkurruese.
           </p>
           <div class="hero-features">
-            <div class="hero-feature">✓ Garanci 25-30 Vite</div>
-            <div class="hero-feature">✓ Produkte Amerikane & Gjermane</div>
-            <div class="hero-feature">✓ Konsultë Falas</div>
+            <div class="hero-feature" data-translate="feature_warranty">
+              ✓ Garanci 25-30 Vite
+            </div>
+            <div class="hero-feature" data-translate="feature_products">
+              ✓ Produkte Amerikane & Gjermane
+            </div>
+            <div class="hero-feature" data-translate="feature_consultation">
+              ✓ Konsultë Falas
+            </div>
           </div>
-          <a href="#contact" class="cta-button">Rezervo Konsultë Falas Tani</a>
+          <a href="#contact" class="cta-button" data-translate="cta_button"
+            >Rezervo Konsultë Falas Tani</a
+          >
         </div>
       </section>
 
       <section class="color-banner">
         <div class="banner-content">
-          <h2 class="banner-title">Ngjyrat e Ëndrrave Tuaja</h2>
-          <p class="banner-text">
+          <h2 class="banner-title" data-translate="banner_title">
+            Ngjyrat e Ëndrrave Tuaja
+          </h2>
+          <p class="banner-text" data-translate="banner_text">
             Specialistë në transformimin e hapësirave me ngjyra dhe dizajne
             moderne
           </p>
           <div class="color-swatches">
-            <div
-              class="swatch"
-              style="background: #ffaa4c"
-              aria-label="Portokalli i ngrohtë"
-            ></div>
-            <div
-              class="swatch"
-              style="background: #ff8a3d"
-              aria-label="Portokalli i ndezur"
-            ></div>
-            <div
-              class="swatch"
-              style="background: #ff5b4c"
-              aria-label="Koral i gjallë"
-            ></div>
-            <div
-              class="swatch"
-              style="background: #e74c3c"
-              aria-label="Kuq i thellë"
-            ></div>
-            <div
-              class="swatch"
-              style="background: #c0392b"
-              aria-label="Burgundy elegant"
-            ></div>
+            <div class="swatch" style="background: #ffaa4c"></div>
+            <div class="swatch" style="background: #ff8a3d"></div>
+            <div class="swatch" style="background: #ff5b4c"></div>
+            <div class="swatch" style="background: #e74c3c"></div>
+            <div class="swatch" style="background: #c0392b"></div>
           </div>
         </div>
       </section>
@@ -2170,8 +2100,10 @@
         <div class="about-container">
           <article class="about-content fade-in">
             <div class="about-text">
-              <h2 class="about-title">Rreth Color Design - Leo Petritaj</h2>
-              <p class="about-description">
+              <h2 class="about-title" data-translate="about_title">
+                Rreth Color Design - Leo Petritaj
+              </h2>
+              <p class="about-description" data-translate="about_desc1">
                 <strong>Color Design Leo Petritaj</strong> është lider në Tiranë
                 për punime cilësore në shtëpi dhe ambiente biznesi. Themeluar
                 nga Leo Petritaj, një profesionist me përvojë të gjatë në
@@ -2182,7 +2114,7 @@
                   afatgjatë.</strong
                 >
               </p>
-              <p class="about-description">
+              <p class="about-description" data-translate="about_desc2">
                 Ne specializohemi në një gamë të gjerë shërbimesh që përfshijnë
                 punime elektrike moderne, lyerje artistike, aplikime të stuko
                 veneziane luksoze, dhe hidroizolim profesional. Çdo projekt
@@ -2192,67 +2124,83 @@
               <div class="stats-grid">
                 <div class="stat-card">
                   <div class="stat-number">15+</div>
-                  <div class="stat-label">Vite Përvojë</div>
+                  <div class="stat-label" data-translate="stat_experience">
+                    Vite Përvojë
+                  </div>
                 </div>
                 <div class="stat-card">
                   <div class="stat-number">500+</div>
-                  <div class="stat-label">Projekte të Përfunduara</div>
+                  <div class="stat-label" data-translate="stat_projects">
+                    Projekte të Përfunduara
+                  </div>
                 </div>
                 <div class="stat-card">
                   <div class="stat-number">30</div>
-                  <div class="stat-label">Vite Garanci</div>
+                  <div class="stat-label" data-translate="stat_warranty">
+                    Vite Garanci
+                  </div>
                 </div>
                 <div class="stat-card">
                   <div class="stat-number">100%</div>
-                  <div class="stat-label">Klientë të Kënaqur</div>
+                  <div class="stat-label" data-translate="stat_satisfaction">
+                    Klientë të Kënaqur
+                  </div>
                 </div>
               </div>
             </div>
             <div class="about-image">
               <img
                 src="/hero2.jpg"
-                alt="Leo Petritaj dhe Ekipi i Doctor Home - Specialistë në Lyerje dhe Punime Elektrike"
+                alt="Leo Petritaj dhe Ekipi"
                 class="team-image"
                 loading="lazy"
               />
               <div class="image-overlay">
-                <p class="overlay-text">Ekip Profesional</p>
+                <p class="overlay-text" data-translate="team_professional">
+                  Ekip Profesional
+                </p>
               </div>
             </div>
           </article>
           <article class="why-choose-us fade-in">
-            <h3 class="why-title">
+            <h3 class="why-title" data-translate="why_choose_title">
               Pse të Zgjidhni Color Design - Leo Petritaj?
             </h3>
             <div class="reasons-grid">
               <div class="reason-card">
                 <div class="reason-icon">🏆</div>
-                <h4>Ekspertizë e Provuar</h4>
-                <p>
+                <h4 data-translate="reason_expertise_title">
+                  Ekspertizë e Provuar
+                </h4>
+                <p data-translate="reason_expertise_desc">
                   Me mijëra projekte të suksesshme dhe klientë të kënaqur në të
                   gjithë Tiranën dhe rrethinat.
                 </p>
               </div>
               <div class="reason-card">
                 <div class="reason-icon">🌟</div>
-                <h4>Materiale Premium</h4>
-                <p>
+                <h4 data-translate="reason_materials_title">
+                  Materiale Premium
+                </h4>
+                <p data-translate="reason_materials_desc">
                   Përdorim ekskluzivisht produkte amerikane dhe gjermane të
                   certifikuara me standarde ndërkombëtare.
                 </p>
               </div>
               <div class="reason-card">
                 <div class="reason-icon">⏰</div>
-                <h4>Dorëzim në Kohë</h4>
-                <p>
+                <h4 data-translate="reason_delivery_title">Dorëzim në Kohë</h4>
+                <p data-translate="reason_delivery_desc">
                   Respektojmë afatet dhe sigurojmë përfundimin e projekteve
                   sipas planifikimit të rënë dakord.
                 </p>
               </div>
               <div class="reason-card">
                 <div class="reason-icon">💰</div>
-                <h4>Çmime Transparente</h4>
-                <p>
+                <h4 data-translate="reason_pricing_title">
+                  Çmime Transparente
+                </h4>
+                <p data-translate="reason_pricing_desc">
                   Oferta të detajuara dhe çmime konkurruese pa kosto të
                   fshehura. Konsultë dhe preventiv falas.
                 </p>
@@ -2262,25 +2210,53 @@
         </div>
       </section>
 
-      <!-- NEW FEATURED SERVICES SECTION -->
+      <!-- FEATURED SERVICES SECTION WITH ALL SERVICES -->
       <section class="featured-services" id="featured-services">
         <div class="featured-services-header">
-          <h2 class="featured-title fade-in">Shërbimet Tona Speciale</h2>
-          <p class="featured-subtitle fade-in">
+          <h2
+            class="featured-title fade-in"
+            data-translate="featured_services_title"
+          >
+            Shërbimet Tona Speciale
+          </h2>
+          <p
+            class="featured-subtitle fade-in"
+            data-translate="featured_services_subtitle"
+          >
             Specializohemi në punime dekorative moderne dhe teknologji të
             avancuara për transformimin e hapësirave tuaja
           </p>
         </div>
 
         <div class="service-tabs fade-in">
-          <button class="service-tab active" data-filter="all">
+          <button
+            class="service-tab active"
+            data-filter="all"
+            data-translate="tab_all"
+          >
             Të Gjitha
           </button>
-          <button class="service-tab" data-filter="decorative">
+          <button
+            class="service-tab"
+            data-filter="decorative"
+            data-translate="tab_decorative"
+          >
             Dekorative
           </button>
-          <button class="service-tab" data-filter="technical">Teknike</button>
-          <button class="service-tab" data-filter="isolation">Izolim</button>
+          <button
+            class="service-tab"
+            data-filter="technical"
+            data-translate="tab_technical"
+          >
+            Teknike
+          </button>
+          <button
+            class="service-tab"
+            data-filter="isolation"
+            data-translate="tab_isolation"
+          >
+            Izolim
+          </button>
         </div>
 
         <div class="featured-grid">
@@ -2306,11 +2282,19 @@
               </video>
             </div>
             <div class="featured-content">
-              <span class="featured-badge">Më e kërkuara</span>
-              <h3 class="featured-service-title">
+              <span class="featured-badge" data-translate="badge_most_requested"
+                >Më e kërkuara</span
+              >
+              <h3
+                class="featured-service-title"
+                data-translate="service_decorative_title"
+              >
                 Punime Dekorative të Ndryshme
               </h3>
-              <p class="featured-service-description">
+              <p
+                class="featured-service-description"
+                data-translate="service_decorative_desc"
+              >
                 Transformoni muret tuaj në vepra arti me teknikat tona moderne
                 dekorative. Nga efektet 3D deri te motivët artistikë, ne
                 krijojmë ambiente unike dhe elegante, të përshtatshme për çdo
@@ -2321,19 +2305,25 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">✨</span>
-                  <span>Efekte 3D</span>
+                  <span data-translate="highlight_3d">Efekte 3D</span>
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🎨</span>
-                  <span>Motive artistike</span>
+                  <span data-translate="highlight_artistic"
+                    >Motive artistike</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🏆</span>
-                  <span>Dizajn personalizuar</span>
+                  <span data-translate="highlight_personalized"
+                    >Dizajn personalizuar</span
+                  >
                 </div>
               </div>
             </div>
           </article>
+
+          <!-- Letra Murale -->
           <article class="featured-card fade-in" data-category="decorative">
             <div class="featured-media">
               <video
@@ -2353,8 +2343,16 @@
             </div>
             <div class="featured-content">
               <span class="featured-badge">Trending</span>
-              <h3 class="featured-service-title">Letra Murale</h3>
-              <p class="featured-service-description">
+              <h3
+                class="featured-service-title"
+                data-translate="service_wallpaper_title"
+              >
+                Letra Murale
+              </h3>
+              <p
+                class="featured-service-description"
+                data-translate="service_wallpaper_desc"
+              >
                 Aplikim profesional i letrave murale moderne dhe tradicionale.
                 Ofrojmë një gamë të gjerë dizajnesh nga motive klasike deri tek
                 printime moderne 3D. Instalim preciz që garanton pamje të
@@ -2363,19 +2361,24 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">🎨</span>
-                  <span>Dizajne moderne</span>
+                  <span data-translate="highlight_modern_designs"
+                    >Dizajne moderne</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🖼️</span>
-                  <span>Printime 3D</span>
+                  <span data-translate="highlight_3d_prints">Printime 3D</span>
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">✨</span>
-                  <span>Instalim perfekt</span>
+                  <span data-translate="highlight_perfect_install"
+                    >Instalim perfekt</span
+                  >
                 </div>
               </div>
             </div>
           </article>
+
           <!-- Punime Micro-cimento -->
           <article class="featured-card fade-in" data-category="decorative">
             <div class="featured-media">
@@ -2395,8 +2398,16 @@
               </video>
             </div>
             <div class="featured-content">
-              <h3 class="featured-service-title">Punime Micro-cimento</h3>
-              <p class="featured-service-description">
+              <h3
+                class="featured-service-title"
+                data-translate="service_microcement_title"
+              >
+                Punime Micro-cimento
+              </h3>
+              <p
+                class="featured-service-description"
+                data-translate="service_microcement_desc"
+              >
                 Ne krijojmë ambiente unike dhe elegante, të përshtatshme për çdo
                 lloj hapësire. Çdo mur bëhet një element dekorativ që pasqyron
                 stilin dhe personalitetin tuaj. Përdorimi i micro-cimentit në
@@ -2407,11 +2418,13 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">💧</span>
-                  <span>Rezistent ndaj ujit</span>
+                  <span data-translate="highlight_water_resistant"
+                    >Rezistent ndaj ujit</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🔧</span>
-                  <span>Pa fuga</span>
+                  <span data-translate="highlight_seamless">Pa fuga</span>
                 </div>
               </div>
             </div>
@@ -2436,20 +2449,34 @@
               </video>
             </div>
             <div class="featured-content">
-              <span class="featured-badge">Luks</span>
-              <h3 class="featured-service-title">Stucco Veneziane</h3>
-              <p class="featured-service-description">
+              <span class="featured-badge" data-translate="badge_luxury"
+                >Luks</span
+              >
+              <h3
+                class="featured-service-title"
+                data-translate="service_venetian_title"
+              >
+                Stucco Veneziane
+              </h3>
+              <p
+                class="featured-service-description"
+                data-translate="service_venetian_desc"
+              >
                 Eleganca klasike italiane me stuko veneziane autentike. Krijojmë
                 sipërfaqe të lëmuara si mermeri me shkëlqim natyral.
               </p>
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">💎</span>
-                  <span>Shkëlqim natyral</span>
+                  <span data-translate="highlight_natural_shine"
+                    >Shkëlqim natyral</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🇮🇹</span>
-                  <span>Teknikë italiane</span>
+                  <span data-translate="highlight_italian_technique"
+                    >Teknikë italiane</span
+                  >
                 </div>
               </div>
             </div>
@@ -2464,8 +2491,16 @@
               <img src="effeto-marmo.jpg" alt="Effeto Marmo" loading="lazy" />
             </div>
             <div class="featured-content">
-              <h3 class="featured-service-title">Effeto Marmo</h3>
-              <p class="featured-service-description">
+              <h3
+                class="featured-service-title"
+                data-translate="service_marble_title"
+              >
+                Effeto Marmo
+              </h3>
+              <p
+                class="featured-service-description"
+                data-translate="service_marble_desc"
+              >
                 Rikrijoni bukurinë e mermerit natyral me teknika speciale. Çdo
                 mur bëhet një vepër arti unike me vena dhe nuanca të
                 personalizuara.
@@ -2473,11 +2508,15 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">🎨</span>
-                  <span>Vena natyrore</span>
+                  <span data-translate="highlight_natural_veins"
+                    >Vena natyrore</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">✨</span>
-                  <span>Efekt mermeri</span>
+                  <span data-translate="highlight_marble_effect"
+                    >Efekt mermeri</span
+                  >
                 </div>
               </div>
             </div>
@@ -2499,17 +2538,25 @@
                 <source src="/epoxide.mp4" type="video/mp4" />
                 <img
                   src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&h=400&fit=crop"
-                  alt="Stucco Veneziane"
+                  alt="Epoxy Flooring"
                   loading="lazy"
                 />
               </video>
             </div>
             <div class="featured-content">
-              <span class="featured-badge">Inovativ</span>
-              <h3 class="featured-service-title">
+              <span class="featured-badge" data-translate="badge_innovative"
+                >Inovativ</span
+              >
+              <h3
+                class="featured-service-title"
+                data-translate="service_epoxy_title"
+              >
                 Punime me Epoxide për Dysheme
               </h3>
-              <p class="featured-service-description">
+              <p
+                class="featured-service-description"
+                data-translate="service_epoxy_desc"
+              >
                 Dysheme industriale dhe moderne me rrëshirë epokside.
                 Rezistente, të personalizueshme me ngjyra dhe efekte 3D
                 spektakolare.
@@ -2517,15 +2564,19 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">💪</span>
-                  <span>Super rezistente</span>
+                  <span data-translate="highlight_super_resistant"
+                    >Super rezistente</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🎨</span>
-                  <span>Efekte 3D</span>
+                  <span data-translate="highlight_3d_effects">Efekte 3D</span>
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🧪</span>
-                  <span>Kimikisht rezistente</span>
+                  <span data-translate="highlight_chemical_resistant"
+                    >Kimikisht rezistente</span
+                  >
                 </div>
               </div>
             </div>
@@ -2541,27 +2592,35 @@
               />
             </div>
             <div class="featured-content">
-              <h3 class="featured-service-title">
+              <h3
+                class="featured-service-title"
+                data-translate="service_gypsum_title"
+              >
                 Punime Gipsi dhe Patinim, Lyerje
               </h3>
-              <p class="featured-service-description">
+              <p
+                class="featured-service-description"
+                data-translate="service_gypsum_desc"
+              >
                 Tavane false moderne, ndarje dhomash elegante dhe dekorime
                 gipsi. Dizajne të personalizuara me ndriçim LED të integruar.
               </p>
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">💡</span>
-                  <span>LED i integruar</span>
+                  <span data-translate="highlight_led_integrated"
+                    >LED i integruar</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">📐</span>
-                  <span>Dizajn modern</span>
+                  <span data-translate="highlight_modern_design"
+                    >Dizajn modern</span
+                  >
                 </div>
               </div>
             </div>
           </article>
-
-          <!-- Punime Patinime & Lyerje -->
 
           <!-- Punime Termoizolimi (kapotë) -->
           <article class="featured-card fade-in" data-category="isolation">
@@ -2569,29 +2628,36 @@
               <img src="/hidro.jpg" alt="Termoizolim Kapotë" loading="lazy" />
             </div>
             <div class="featured-content">
-              <span class="featured-badge">Efiçiencë</span>
-              <h3 class="featured-service-title">
+              <span class="featured-badge" data-translate="badge_efficiency"
+                >Efiçiencë</span
+              >
+              <h3
+                class="featured-service-title"
+                data-translate="service_thermal_title"
+              >
                 Punime Termoizolimi (Kapotë)
               </h3>
-              <p class="featured-service-description">
+              <p
+                class="featured-service-description"
+                data-translate="service_thermal_desc"
+              >
                 Sipërfaqe moderne pa fuga me micro-cimento. Ideal për banjo,
                 kuzhina dhe dysheme industriale me një pamje minimaliste. Ne
                 krijojmë ambiente unike dhe elegante, të përshtatshme për çdo
-                lloj hapësire. Çdo mur bëhet një element dekorativ që pasqyron
-                stilin dhe personalitetin tuaj. Përdorimi i micro-cimentit në
-                ambiente të ndryshme, si zyra, sallone, parukeri apo hapësira
-                biznesi, ofron një estetikë të veçantë dhe funksionale. Kjo vlen
-                edhe për sipërfaqet murale të brendshme, ku micro-cimento sjell
-                një pamje minimaliste dhe moderne në interierin tuaj.
+                lloj hapësire.
               </p>
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">🌡️</span>
-                  <span>Kursim energjie</span>
+                  <span data-translate="highlight_energy_saving"
+                    >Kursim energjie</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🏠</span>
-                  <span>Komfort termik</span>
+                  <span data-translate="highlight_thermal_comfort"
+                    >Komfort termik</span
+                  >
                 </div>
               </div>
             </div>
@@ -2610,11 +2676,21 @@
               />
             </div>
             <div class="featured-content">
-              <span class="featured-badge">Garanci 30 vite</span>
-              <h3 class="featured-service-title">
+              <span
+                class="featured-badge"
+                data-translate="badge_30_year_warranty"
+                >Garanci 30 vite</span
+              >
+              <h3
+                class="featured-service-title"
+                data-translate="service_waterproofing_title"
+              >
                 Hidroizolim & Termoizolim për Taraca
               </h3>
-              <p class="featured-service-description">
+              <p
+                class="featured-service-description"
+                data-translate="service_waterproofing_desc"
+              >
                 Mbrojtje e plotë për taracat tuaja me sisteme moderne
                 hidroizolimi dhe termoizolimi. Produkte gjermane me garanci deri
                 në 30 vite për qetësinë tuaj absolute.
@@ -2622,15 +2698,21 @@
               <div class="featured-highlights">
                 <div class="highlight-item">
                   <span class="highlight-icon">💧</span>
-                  <span>100% i papërshkueshëm</span>
+                  <span data-translate="highlight_100_waterproof"
+                    >100% i papërshkueshëm</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🛡️</span>
-                  <span>30 vite garanci</span>
+                  <span data-translate="highlight_30_year"
+                    >30 vite garanci</span
+                  >
                 </div>
                 <div class="highlight-item">
                   <span class="highlight-icon">🇩🇪</span>
-                  <span>Produkte gjermane</span>
+                  <span data-translate="highlight_german_products"
+                    >Produkte gjermane</span
+                  >
                 </div>
               </div>
             </div>
@@ -2638,10 +2720,16 @@
         </div>
       </section>
 
+      <!-- REGULAR SERVICES SECTION -->
       <section class="services" id="services">
         <div class="container">
-          <h2 class="section-title fade-in">Shërbimet Tona të Tjera</h2>
-          <p class="section-subtitle fade-in">
+          <h2 class="section-title fade-in" data-translate="services_title">
+            Shërbimet Tona të Tjera
+          </h2>
+          <p
+            class="section-subtitle fade-in"
+            data-translate="services_subtitle"
+          >
             Me një gamë të gjerë shërbimesh profesionale, ne jemi partneri juaj
             i besueshëm për çdo projekt. Nga instalime elektrike moderne deri
             tek dekorime artistike, çdo detaj trajtohet me kujdes maksimal.
@@ -2656,8 +2744,16 @@
               />
               <div class="service-content">
                 <div class="service-icon">🔧</div>
-                <h3 class="service-title">Punime Hidraulike</h3>
-                <p class="service-description">
+                <h3
+                  class="service-title"
+                  data-translate="service_plumbing_title"
+                >
+                  Punime Hidraulike
+                </h3>
+                <p
+                  class="service-description"
+                  data-translate="service_plumbing_desc"
+                >
                   Instalime dhe riparime hidraulike të specializuara për sisteme
                   ujësjellësi dhe ngrohje. Zgjidhje të plota për banjo, kuzhina
                   dhe të gjitha nevojat hidraulike të shtëpisë suaj. Përdorim
@@ -2665,9 +2761,15 @@
                   funksionalitet optimal të sistemeve.
                 </p>
                 <div class="service-tags">
-                  <span class="service-tag">Instalime ujësjellësi</span>
-                  <span class="service-tag">Riparim tubacionesh</span>
-                  <span class="service-tag">Sisteme ngrohje</span>
+                  <span class="service-tag" data-translate="tag_water"
+                    >Instalime ujësjellësi</span
+                  >
+                  <span class="service-tag" data-translate="tag_repair"
+                    >Riparim tubacionesh</span
+                  >
+                  <span class="service-tag" data-translate="tag_heating"
+                    >Sisteme ngrohje</span
+                  >
                 </div>
               </div>
             </article>
@@ -2675,10 +2777,16 @@
         </div>
       </section>
 
+      <!-- PRODUCTS SECTION WITH ALL CATEGORIES -->
       <section class="products" id="products">
         <div class="container">
-          <h2 class="section-title fade-in">Produktet Tona Premium</h2>
-          <p class="section-subtitle fade-in">
+          <h2 class="section-title fade-in" data-translate="products_title">
+            Produktet Tona Premium
+          </h2>
+          <p
+            class="section-subtitle fade-in"
+            data-translate="products_subtitle"
+          >
             Ne punojmë vetëm me markat më të mira në treg. Produktet tona janë
             zgjedhur me kujdes për të garantuar rezultate superiore dhe
             qëndrueshmëri maksimale. Të gjitha produktet vijnë me certifikata
@@ -2688,7 +2796,9 @@
           <div class="products-categories">
             <!-- Bojra Dekorative Italiane Section - FIRST -->
             <section class="product-category">
-              <h3 class="category-title">🇮🇹 Bojra Dekorative Italiane</h3>
+              <h3 class="category-title" data-translate="cat_italian_paints">
+                🇮🇹 Bojra Dekorative Italiane
+              </h3>
               <div class="product-dual">
                 <article class="product-card fade-in">
                   <img
@@ -2699,8 +2809,16 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">Giorgio Greasan</h4>
-                    <p class="product-detail">Elegancë italiane autentike</p>
-                    <p class="product-description">
+                    <p
+                      class="product-detail"
+                      data-translate="product_italian_authentic"
+                    >
+                      Elegancë italiane autentike
+                    </p>
+                    <p
+                      class="product-description"
+                      data-translate="product_italian_desc"
+                    >
                       Dëshironi që ambienti juaj të ketë një pamje moderne dhe
                       luksoze? Ne jemi këtu për ta kthyer këtë dëshirë në
                       realitet!
@@ -2716,25 +2834,29 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">Color Cebos Style</h4>
-                    <p class="product-detail">
+                    <p
+                      class="product-detail"
+                      data-translate="product_cebos_quality"
+                    >
                       Sipas standardeve më të larta të dizajnit dhe cilësisë.
                     </p>
-                    <p class="product-description">
+                    <p
+                      class="product-description"
+                      data-translate="product_cebos_desc"
+                    >
                       Një zgjedhje elegante për ata që kërkojnë më shumë se
                       thjesht një ngjyrë muri. Kjo bojë premium kombinon
                       cilësinë italiane, teksturat artistike dhe shkëlqimin e
-                      sofistikuar, duke i dhënë çdo ambienti një pamje moderne
-                      dhe luksoze.
+                      sofistikuar.
                     </p>
                   </div>
                 </article>
               </div>
             </section>
 
-            <!-- Bojra Amerikane Section - SECOND -->
-
+            <!-- German Antibacterial Paints Dinova -->
             <section class="product-category">
-              <h3 class="category-title">
+              <h3 class="category-title" data-translate="cat_german_paints">
                 🇩🇪 Bojra Gjermane Antibakteriale Ekologjike Dinova
               </h3>
               <div class="product-grid">
@@ -2747,27 +2869,31 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">Dinova</h4>
-                    <p class="product-detail">
+                    <p
+                      class="product-detail"
+                      data-translate="product_dinova_warranty"
+                    >
                       10-15 vite garanci nga prodhuesi
                     </p>
-                    <p class="product-description">
+                    <p
+                      class="product-description"
+                      data-translate="product_dinova_desc"
+                    >
                       Dinova ofron bojë gjermane ekologjike dhe antibakteriale,
                       e projektuar për ambiente të brendshme që kërkojnë
                       pastërti dhe cilësi të lartë. Formula e saj speciale
                       ndihmon në parandalimin e zhvillimit të baktereve dhe
-                      mykut, duke krijuar një mjedis të shëndetshëm dhe të
-                      sigurt. E prodhuar sipas standardeve gjermane të
-                      qëndrueshmërisë, kjo bojë është pa aromë, pa substanca
-                      toksike dhe miqësore me mjedisin. E përshtatshme për
-                      spitale, çerdhe, shkolla, hotele, dhe ambiente banimi.
+                      mykut. E përshtatshme për spitale, çerdhe, shkolla,
+                      hotele.
                     </p>
                   </div>
                 </article>
               </div>
             </section>
 
+            <!-- American Benjamin Moore Paints -->
             <section class="product-category">
-              <h3 class="category-title">
+              <h3 class="category-title" data-translate="cat_american_paints">
                 🇺🇸 Bojra Amerikane Benjamin Moore Premium
               </h3>
               <div class="product-grid">
@@ -2780,24 +2906,30 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">Benjamin Moore Premium</h4>
-                    <p class="product-detail">
+                    <p
+                      class="product-detail"
+                      data-translate="product_benjamin_quality"
+                    >
                       Bojra që ju mbajnë largë problemet me mykun për shumë
                       vite.
                     </p>
-                    <p class="product-description">
+                    <p
+                      class="product-description"
+                      data-translate="product_benjamin_desc"
+                    >
                       Benjamin Moore Premium është bojë amerikane me cilësi të
                       lartë, që ofron ngjyra të pasura, mbulim të plotë dhe
-                      rezistencë të jashtëzakonshme. Ideal për ambiente që
-                      kërkojnë elegancë dhe qëndrueshmëri afatgjatë.
+                      rezistencë të jashtëzakonshme.
                     </p>
                   </div>
                 </article>
               </div>
             </section>
+
+            <!-- German MKC Paints -->
             <section class="product-category">
-              <h3 class="category-title">
-                🇩🇪 Bojra gjermane 🟥MKC🟥 Bojra të cilësi së lartë ku ju ofron
-                kualitet dhe garanci për ambjentet tuaja.
+              <h3 class="category-title" data-translate="cat_mkc_paints">
+                🇩🇪 Bojra gjermane 🟥MKC🟥 Bojra të cilësisë së lartë
               </h3>
               <div class="product-grid">
                 <article class="product-card fade-in">
@@ -2809,26 +2941,32 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">Bojra gjermane 🟥MKC🟥</h4>
-                    <p class="product-detail">
-                      Bojra të cilësis së lartë ku ju ofron kualitet dhe garanci
-                      për ambjentet tuaja.
+                    <p
+                      class="product-detail"
+                      data-translate="product_mkc_quality"
+                    >
+                      Bojra të cilësisë së lartë ku ju ofron kualitet dhe
+                      garanci për ambjentet tuaja.
                     </p>
-                    <p class="product-description">
+                    <p
+                      class="product-description"
+                      data-translate="product_mkc_desc"
+                    >
                       MKC Standart është bojë gjermane me cilësi të mirë dhe
                       çmim të arsyeshëm, e përshtatshme për bojë për fasada.
                       Ofron mbulim të mirë, tharje të shpejtë dhe sipërfaqe të
-                      pastër e uniforme. Zgjedhje ideale për përdorim shtëpiak
-                      dhe profesional.
+                      pastër e uniforme.
                     </p>
                   </div>
                 </article>
               </div>
             </section>
-            <!-- Bojra Gjermane Section -->
 
-            <!-- Hidroizolues Section - LAST -->
+            <!-- Waterproofing Products Section -->
             <section class="product-category">
-              <h3 class="category-title">🛡️ Hidroizolues</h3>
+              <h3 class="category-title" data-translate="cat_waterproofing">
+                🛡️ Hidroizolues
+              </h3>
               <div class="product-dual">
                 <article class="product-card fade-in">
                   <img
@@ -2839,20 +2977,26 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">🇺🇸 Amerikan Rust Oleum 10</h4>
-                    <p class="product-detail">Deri 15 vite garanci</p>
-                    <p class="product-description">
+                    <p
+                      class="product-detail"
+                      data-translate="product_rust_warranty"
+                    >
+                      Deri 15 vite garanci
+                    </p>
+                    <p
+                      class="product-description"
+                      data-translate="product_rust_desc"
+                    >
                       Rust-Oleum 10 është bojë amerikane antikorrozive dhe shumë
                       rezistente, e krijuar për mbrojtjen e metaleve nga
-                      ndryshku dhe faktorët e jashtëm. Ofron ngjitje të fortë,
-                      qëndrueshmëri afatgjatë dhe përfundim profesional - ideale
-                      për përdorim industrial dhe ndërtimtar.
+                      ndryshku dhe faktorët e jashtëm.
                     </p>
                   </div>
                 </article>
                 <article class="product-card fade-in">
                   <img
                     src="/2.jpg"
-                    alt="Hidroizolues Amerikan"
+                    alt="Hidroizolues Gjerman"
                     class="product-image"
                     loading="lazy"
                   />
@@ -2860,17 +3004,19 @@
                     <h4 class="product-name">
                       🇩🇪 Produkt Hidroizolimi gjerman 🟥MKC🟥
                     </h4>
-                    <p class="product-detail">
-                      25 Deri në 30 vite garanci shumë rezistent dhe
-                      qëndrushmëri afatgjatë nga djelli dhe lagështia.
+                    <p
+                      class="product-detail"
+                      data-translate="product_mkc_hydro_warranty"
+                    >
+                      25 Deri në 30 vite garanci shumë rezistent
                     </p>
-                    <p class="product-description">
+                    <p
+                      class="product-description"
+                      data-translate="product_mkc_hydro_desc"
+                    >
                       MKC Hidroizolim është produkt gjerman me performancë të
                       lartë, i projektuar për të mbrojtur sipërfaqet nga uji,
-                      lagështia dhe depërtimi i avujve. Ofron elasticitet të
-                      lartë, ngjitje të shkëlqyer dhe qëndrueshmëri afatgjatë në
-                      çdo kusht. Ideal për taraca, banjo, bodrume dhe zona me
-                      kontakt me ujë.
+                      lagështia dhe depërtimi i avujve.
                     </p>
                   </div>
                 </article>
@@ -2883,11 +3029,12 @@
                   />
                   <div class="product-info">
                     <h4 class="product-name">
-                      🇩🇪 🟥MKC🟥 Grafiato Silikoni 1.5 - Fasadë 1.5mm, super
-                      kualitet👌🏡
+                      🇩🇪 🟥MKC🟥 Grafiato Silikoni 1.5
                     </h4>
                     <p class="product-detail">Made in Germany 🇩🇪</p>
-                    <p class="product-description">Kualitet dhe inovacion ✅</p>
+                    <p class="product-description">
+                      Fasadë 1.5mm, super kualitet👌🏡 Kualitet dhe inovacion ✅
+                    </p>
                   </div>
                 </article>
               </div>
@@ -2895,38 +3042,46 @@
           </div>
 
           <article class="product-features fade-in">
-            <h3 class="features-title">
+            <h3 class="features-title" data-translate="product_features_title">
               Përse Produktet Tona Janë Zgjedhja e Duhur
             </h3>
             <div class="features-grid">
               <div class="feature-item">
                 <span class="feature-icon">🔬</span>
-                <h4>Teknologji e Avancuar</h4>
-                <p>
+                <h4 data-translate="feature_tech_title">
+                  Teknologji e Avancuar
+                </h4>
+                <p data-translate="feature_tech_desc">
                   Formulime moderne që garantojnë performancë superiore dhe
                   jetëgjatësi.
                 </p>
               </div>
               <div class="feature-item">
                 <span class="feature-icon">🌍</span>
-                <h4>Standarde Ndërkombëtare</h4>
-                <p>
+                <h4 data-translate="feature_standards_title">
+                  Standarde Ndërkombëtare
+                </h4>
+                <p data-translate="feature_standards_desc">
                   Të gjitha produktet plotësojnë normat më të larta evropiane
                   dhe amerikane.
                 </p>
               </div>
               <div class="feature-item">
                 <span class="feature-icon">🏭</span>
-                <h4>Prodhues të Njohur</h4>
-                <p>
+                <h4 data-translate="feature_producers_title">
+                  Prodhues të Njohur
+                </h4>
+                <p data-translate="feature_producers_desc">
                   Partnerë ekskluzivë me kompanitë lider në industrinë e
                   ndërtimit.
                 </p>
               </div>
               <div class="feature-item">
                 <span class="feature-icon">📜</span>
-                <h4>Certifikata Garancie</h4>
-                <p>
+                <h4 data-translate="feature_certificates_title">
+                  Certifikata Garancie
+                </h4>
+                <p data-translate="feature_certificates_desc">
                   Çdo produkt vjen me dokumentacion të plotë dhe garanci të
                   zgjatur.
                 </p>
@@ -2937,15 +3092,16 @@
       </section>
 
       <section class="contact" id="contact">
-        <div style="max-width: 100%; width: 100%; padding: 0">
-          <iframe
-            aria-label="Rezervo Konsultë Falas për Lyerje dhe Punime Elektrike"
-            frameborder="0"
-            style="height: 950px; width: 100%; border: none; display: block"
-            src="https://forms.zohopublic.eu/bitcryptics1/form/RezervoKonsultFalasTani/formperma/GtzMQPBuz-sU7FU-sG3ZpgVrIS5YydQdkrp38V6cOgA"
-            title="Formular Kontakti Color Design - Leo Petritaj"
-          >
-          </iframe>
+        <div class="contact-container">
+          <div class="iframe-container">
+            <iframe
+              aria-label="Rezervo Konsultë Falas për Lyerje dhe Punime Elektrike"
+              frameborder="0"
+              src="https://forms.zohopublic.eu/bitcryptics1/form/RezervoKonsultFalasTani/formperma/GtzMQPBuz-sU7FU-sG3ZpgVrIS5YydQdkrp38V6cOgA"
+              title="Formular Kontakti Color Design - Leo Petritaj"
+            >
+            </iframe>
+          </div>
         </div>
       </section>
     </main>
@@ -2955,17 +3111,19 @@
         <div class="footer-section">
           <h3>Color Design - Leo Petritaj</h3>
           <p>Leo Petritaj</p>
-          <p>Ekspertë në punime cilësore për shtëpinë tuaj</p>
+          <p data-translate="footer_tagline">
+            Ekspertë në punime cilësore për shtëpinë tuaj
+          </p>
         </div>
         <div class="footer-section">
-          <h3>Adresa</h3>
+          <h3 data-translate="footer_address">Adresa</h3>
           <address>
             <p>Rruga Gani Toptani 70</p>
             <p>Mëzezi, Tiranë, Albania 72</p>
           </address>
         </div>
         <div class="footer-section">
-          <h3>Kontakt</h3>
+          <h3 data-translate="footer_contact">Kontakt</h3>
           <p>📞 <a href="tel:+355682576054">+355 68 257 6054</a></p>
           <p>
             ✉️
@@ -2975,26 +3133,769 @@
           </p>
         </div>
         <div class="footer-section">
-          <h3>Orari i Punës</h3>
-          <p>E Hënë - E Premte: 08:00 - 18:00</p>
-          <p>E Shtunë: 09:00 - 14:00</p>
+          <h3 data-translate="footer_hours">Orari i Punës</h3>
+          <p data-translate="footer_weekdays">
+            E Hënë - E Premte: 08:00 - 18:00
+          </p>
+          <p data-translate="footer_saturday">E Shtunë: 09:00 - 14:00</p>
         </div>
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; 2025 Color Design - Leo Petritaj. Të gjitha të drejtat të
-          rezervuara. |
-          <a href="/privacy-policy" style="color: inherit"
-            >Politika e Privatësisë</a
+          © 2025 Color Design - Leo Petritaj.
+          <span data-translate="footer_rights"
+            >Të gjitha të drejtat të rezervuara.</span
           >
-          | <a href="/terms" style="color: inherit">Kushtet e Përdorimit</a>
         </p>
       </div>
     </footer>
 
     <script>
+      // Complete Translation Dictionary
+      const translations = {
+        sq: {
+          // Navigation
+          nav_home: "Ballina",
+          nav_about: "Rreth Nesh",
+          nav_featured_services: "Shërbimet Speciale",
+          nav_services: "Të Gjitha Shërbimet",
+          nav_products: "Produktet",
+          nav_contact: "Kontakt",
+
+          // Hero Section
+          hero_subtitle: "Leo Petritaj - Ekspertë në Punime Cilësore",
+          hero_description:
+            "Transformoni hapësirën tuaj me ngjyrat dhe dizajnin që ëndërroni! Me përvojë 15-vjeçare në industri, ne ofrojmë zgjidhje profesionale për çdo nevojë të shtëpisë suaj.",
+          feature_warranty: "✓ Garanci 25-30 Vite",
+          feature_products: "✓ Produkte Amerikane & Gjermane",
+          feature_consultation: "✓ Konsultë Falas",
+          cta_button: "Rezervo Konsultë Falas Tani",
+
+          // Banner
+          banner_title: "Ngjyrat e Ëndrrave Tuaja",
+          banner_text:
+            "Specialistë në transformimin e hapësirave me ngjyra dhe dizajne moderne",
+
+          // About Section
+          about_title: "Rreth Color Design - Leo Petritaj",
+          about_desc1:
+            "<strong>Color Design Leo Petritaj</strong> është lider në Tiranë për punime cilësore në shtëpi dhe ambiente biznesi. Themeluar nga Leo Petritaj, një profesionist me përvojë të gjatë në industri.",
+          about_desc2:
+            "Ne specializohemi në një gamë të gjerë shërbimesh që përfshijnë punime elektrike moderne, lyerje artistike, aplikime të stuko veneziane luksoze, dhe hidroizolim profesional.",
+          stat_experience: "Vite Përvojë",
+          stat_projects: "Projekte të Përfunduara",
+          stat_warranty: "Vite Garanci",
+          stat_satisfaction: "Klientë të Kënaqur",
+          team_professional: "Ekip Profesional",
+
+          // Why Choose Us
+          why_choose_title: "Pse të Zgjidhni Color Design - Leo Petritaj?",
+          reason_expertise_title: "Ekspertizë e Provuar",
+          reason_expertise_desc:
+            "Me mijëra projekte të suksesshme dhe klientë të kënaqur në të gjithë Tiranën dhe rrethinat.",
+          reason_materials_title: "Materiale Premium",
+          reason_materials_desc:
+            "Përdorim ekskluzivisht produkte amerikane dhe gjermane të certifikuara me standarde ndërkombëtare.",
+          reason_delivery_title: "Dorëzim në Kohë",
+          reason_delivery_desc:
+            "Respektojmë afatet dhe sigurojmë përfundimin e projekteve sipas planifikimit të rënë dakord.",
+          reason_pricing_title: "Çmime Transparente",
+          reason_pricing_desc:
+            "Oferta të detajuara dhe çmime konkurruese pa kosto të fshehura. Konsultë dhe preventiv falas.",
+
+          // Featured Services
+          featured_services_title: "Shërbimet Tona Speciale",
+          featured_services_subtitle:
+            "Specializohemi në punime dekorative moderne dhe teknologji të avancuara për transformimin e hapësirave tuaja",
+          tab_all: "Të Gjitha",
+          tab_decorative: "Dekorative",
+          tab_technical: "Teknike",
+          tab_isolation: "Izolim",
+          badge_most_requested: "Më e kërkuara",
+          badge_luxury: "Luks",
+          badge_innovative: "Inovativ",
+          badge_efficiency: "Efiçiencë",
+          badge_30_year_warranty: "Garanci 30 vite",
+
+          // Service Cards
+          service_decorative_title: "Punime Dekorative të Ndryshme",
+          service_decorative_desc:
+            "Transformoni muret tuaj në vepra arti me teknikat tona moderne dekorative. Nga efektet 3D deri te motivët artistikë.",
+          service_wallpaper_title: "Letra Murale",
+          service_wallpaper_desc:
+            "Aplikim profesional i letrave murale moderne dhe tradicionale. Ofrojmë një gamë të gjerë dizajnesh nga motive klasike deri tek printime moderne 3D.",
+          service_microcement_title: "Punime Micro-cimento",
+          service_microcement_desc:
+            "Ne krijojmë ambiente unike dhe elegante, të përshtatshme për çdo lloj hapësire.",
+          service_venetian_title: "Stucco Veneziane",
+          service_venetian_desc:
+            "Eleganca klasike italiane me stuko veneziane autentike. Krijojmë sipërfaqe të lëmuara si mermeri me shkëlqim natyral.",
+          service_marble_title: "Effeto Marmo",
+          service_marble_desc:
+            "Rikrijoni bukurinë e mermerit natyral me teknika speciale. Çdo mur bëhet një vepër arti unike.",
+          service_epoxy_title: "Punime me Epoxide për Dysheme",
+          service_epoxy_desc:
+            "Dysheme industriale dhe moderne me rrëshirë epokside. Rezistente, të personalizueshme me ngjyra dhe efekte 3D spektakolare.",
+          service_gypsum_title: "Punime Gipsi dhe Patinim, Lyerje",
+          service_gypsum_desc:
+            "Tavane false moderne, ndarje dhomash elegante dhe dekorime gipsi. Dizajne të personalizuara me ndriçim LED të integruar.",
+          service_thermal_title: "Punime Termoizolimi (Kapotë)",
+          service_thermal_desc:
+            "Sipërfaqe moderne pa fuga me micro-cimento. Ideal për banjo, kuzhina dhe dysheme industriale me një pamje minimaliste.",
+          service_waterproofing_title: "Hidroizolim & Termoizolim për Taraca",
+          service_waterproofing_desc:
+            "Mbrojtje e plotë për taracat tuaja me sisteme moderne hidroizolimi dhe termoizolimi. Produkte gjermane me garanci deri në 30 vite.",
+
+          // Highlights
+          highlight_3d: "Efekte 3D",
+          highlight_artistic: "Motive artistike",
+          highlight_personalized: "Dizajn personalizuar",
+          highlight_modern_designs: "Dizajne moderne",
+          highlight_3d_prints: "Printime 3D",
+          highlight_perfect_install: "Instalim perfekt",
+          highlight_water_resistant: "Rezistent ndaj ujit",
+          highlight_seamless: "Pa fuga",
+          highlight_natural_shine: "Shkëlqim natyral",
+          highlight_italian_technique: "Teknikë italiane",
+          highlight_natural_veins: "Vena natyrore",
+          highlight_marble_effect: "Efekt mermeri",
+          highlight_super_resistant: "Super rezistente",
+          highlight_3d_effects: "Efekte 3D",
+          highlight_chemical_resistant: "Kimikisht rezistente",
+          highlight_led_integrated: "LED i integruar",
+          highlight_modern_design: "Dizajn modern",
+          highlight_energy_saving: "Kursim energjie",
+          highlight_thermal_comfort: "Komfort termik",
+          highlight_100_waterproof: "100% i papërshkueshëm",
+          highlight_30_year: "30 vite garanci",
+          highlight_german_products: "Produkte gjermane",
+
+          // Services
+          services_title: "Shërbimet Tona të Tjera",
+          services_subtitle:
+            "Me një gamë të gjerë shërbimesh profesionale, ne jemi partneri juaj i besueshëm për çdo projekt.",
+          service_plumbing_title: "Punime Hidraulike",
+          service_plumbing_desc:
+            "Instalime dhe riparime hidraulike të specializuara për sisteme ujësjellësi dhe ngrohje.",
+          tag_water: "Instalime ujësjellësi",
+          tag_repair: "Riparim tubacionesh",
+          tag_heating: "Sisteme ngrohje",
+
+          // Products
+          products_title: "Produktet Tona Premium",
+          products_subtitle:
+            "Ne punojmë vetëm me markat më të mira në treg. Produktet tona janë zgjedhur me kujdes për të garantuar rezultate superiore.",
+
+          // Product Categories
+          cat_italian_paints: "🇮🇹 Bojra Dekorative Italiane",
+          cat_german_paints:
+            "🇩🇪 Bojra Gjermane Antibakteriale Ekologjike Dinova",
+          cat_american_paints: "🇺🇸 Bojra Amerikane Benjamin Moore Premium",
+          cat_mkc_paints:
+            "🇩🇪 Bojra gjermane 🟥MKC🟥 Bojra të cilësisë së lartë",
+          cat_waterproofing: "🛡️ Hidroizolues",
+
+          // Product Details
+          product_italian_authentic: "Elegancë italiane autentike",
+          product_italian_desc:
+            "Dëshironi që ambienti juaj të ketë një pamje moderne dhe luksoze? Ne jemi këtu për ta kthyer këtë dëshirë në realitet!",
+          product_cebos_quality:
+            "Sipas standardeve më të larta të dizajnit dhe cilësisë.",
+          product_cebos_desc:
+            "Një zgjedhje elegante për ata që kërkojnë më shumë se thjesht një ngjyrë muri.",
+          product_dinova_warranty: "10-15 vite garanci nga prodhuesi",
+          product_dinova_desc:
+            "Dinova ofron bojë gjermane ekologjike dhe antibakteriale, e projektuar për ambiente të brendshme që kërkojnë pastërti dhe cilësi të lartë.",
+          product_benjamin_quality:
+            "Bojra që ju mbajnë largë problemet me mykun për shumë vite.",
+          product_benjamin_desc:
+            "Benjamin Moore Premium është bojë amerikane me cilësi të lartë, që ofron ngjyra të pasura, mbulim të plotë dhe rezistencë të jashtëzakonshme.",
+          product_mkc_quality:
+            "Bojra të cilësisë së lartë ku ju ofron kualitet dhe garanci për ambjentet tuaja.",
+          product_mkc_desc:
+            "MKC Standart është bojë gjermane me cilësi të mirë dhe çmim të arsyeshëm, e përshtatshme për bojë për fasada.",
+          product_rust_warranty: "Deri 15 vite garanci",
+          product_rust_desc:
+            "Rust-Oleum 10 është bojë amerikane antikorrozive dhe shumë rezistente, e krijuar për mbrojtjen e metaleve nga ndryshku dhe faktorët e jashtëm.",
+          product_mkc_hydro_warranty:
+            "25 Deri në 30 vite garanci shumë rezistent",
+          product_mkc_hydro_desc:
+            "MKC Hidroizolim është produkt gjerman me performancë të lartë, i projektuar për të mbrojtur sipërfaqet nga uji, lagështia dhe depërtimi i avujve.",
+
+          // Product Features
+          product_features_title: "Përse Produktet Tona Janë Zgjedhja e Duhur",
+          feature_tech_title: "Teknologji e Avancuar",
+          feature_tech_desc:
+            "Formulime moderne që garantojnë performancë superiore dhe jetëgjatësi.",
+          feature_standards_title: "Standarde Ndërkombëtare",
+          feature_standards_desc:
+            "Të gjitha produktet plotësojnë normat më të larta evropiane dhe amerikane.",
+          feature_producers_title: "Prodhues të Njohur",
+          feature_producers_desc:
+            "Partnerë ekskluzivë me kompanitë lider në industrinë e ndërtimit.",
+          feature_certificates_title: "Certifikata Garancie",
+          feature_certificates_desc:
+            "Çdo produkt vjen me dokumentacion të plotë dhe garanci të zgjatur.",
+
+          // Footer
+          footer_tagline: "Ekspertë në punime cilësore për shtëpinë tuaj",
+          footer_address: "Adresa",
+          footer_contact: "Kontakt",
+          footer_hours: "Orari i Punës",
+          footer_weekdays: "E Hënë - E Premte: 08:00 - 18:00",
+          footer_saturday: "E Shtunë: 09:00 - 14:00",
+          footer_rights: "Të gjitha të drejtat të rezervuara.",
+        },
+
+        en: {
+          // Navigation
+          nav_home: "Home",
+          nav_about: "About Us",
+          nav_featured_services: "Featured Services",
+          nav_services: "All Services",
+          nav_products: "Products",
+          nav_contact: "Contact",
+
+          // Hero Section
+          hero_subtitle: "Leo Petritaj - Quality Work Experts",
+          hero_description:
+            "Transform your space with the colors and design you dream of! With 15 years of industry experience, we offer professional solutions for every need of your home.",
+          feature_warranty: "✓ 25-30 Years Warranty",
+          feature_products: "✓ American & German Products",
+          feature_consultation: "✓ Free Consultation",
+          cta_button: "Book Free Consultation Now",
+
+          // Banner
+          banner_title: "Colors of Your Dreams",
+          banner_text:
+            "Specialists in transforming spaces with modern colors and designs",
+
+          // About Section
+          about_title: "About Color Design - Leo Petritaj",
+          about_desc1:
+            "<strong>Color Design Leo Petritaj</strong> is a leader in Tirana for quality work in homes and business environments. Founded by Leo Petritaj, a professional with extensive experience in the industry.",
+          about_desc2:
+            "We specialize in a wide range of services including modern electrical work, artistic painting, luxury Venetian stucco applications, and professional waterproofing.",
+          stat_experience: "Years of Experience",
+          stat_projects: "Completed Projects",
+          stat_warranty: "Years Warranty",
+          stat_satisfaction: "Satisfied Customers",
+          team_professional: "Professional Team",
+
+          // Why Choose Us
+          why_choose_title: "Why Choose Color Design - Leo Petritaj?",
+          reason_expertise_title: "Proven Expertise",
+          reason_expertise_desc:
+            "Thousands of successful projects and satisfied customers throughout Tirana and surroundings.",
+          reason_materials_title: "Premium Materials",
+          reason_materials_desc:
+            "We exclusively use American and German products certified with international standards.",
+          reason_delivery_title: "On-Time Delivery",
+          reason_delivery_desc:
+            "We respect deadlines and ensure project completion according to agreed schedule.",
+          reason_pricing_title: "Transparent Pricing",
+          reason_pricing_desc:
+            "Detailed quotes and competitive prices with no hidden costs. Free consultation and estimate.",
+
+          // Featured Services
+          featured_services_title: "Our Featured Services",
+          featured_services_subtitle:
+            "We specialize in modern decorative works and advanced technologies for transforming your spaces",
+          tab_all: "All",
+          tab_decorative: "Decorative",
+          tab_technical: "Technical",
+          tab_isolation: "Insulation",
+          badge_most_requested: "Most Requested",
+          badge_luxury: "Luxury",
+          badge_innovative: "Innovative",
+          badge_efficiency: "Efficiency",
+          badge_30_year_warranty: "30 Year Warranty",
+
+          // Service Cards
+          service_decorative_title: "Various Decorative Works",
+          service_decorative_desc:
+            "Transform your walls into works of art with our modern decorative techniques. From 3D effects to artistic motifs.",
+          service_wallpaper_title: "Wallpapers",
+          service_wallpaper_desc:
+            "Professional application of modern and traditional wallpapers. We offer a wide range of designs from classic motifs to modern 3D prints.",
+          service_microcement_title: "Microcement Works",
+          service_microcement_desc:
+            "We create unique and elegant environments, suitable for any type of space.",
+          service_venetian_title: "Venetian Stucco",
+          service_venetian_desc:
+            "Classic Italian elegance with authentic Venetian stucco. We create smooth surfaces like marble with natural shine.",
+          service_marble_title: "Marble Effect",
+          service_marble_desc:
+            "Recreate the beauty of natural marble with special techniques. Every wall becomes a unique work of art.",
+          service_epoxy_title: "Epoxy Flooring Works",
+          service_epoxy_desc:
+            "Industrial and modern floors with epoxy resin. Resistant, customizable with colors and spectacular 3D effects.",
+          service_gypsum_title: "Gypsum Works and Painting",
+          service_gypsum_desc:
+            "Modern false ceilings, elegant room dividers and gypsum decorations. Custom designs with integrated LED lighting.",
+          service_thermal_title: "Thermal Insulation Works (Capoto)",
+          service_thermal_desc:
+            "Modern seamless surfaces with microcement. Ideal for bathrooms, kitchens and industrial floors with a minimalist look.",
+          service_waterproofing_title:
+            "Waterproofing & Thermal Insulation for Terraces",
+          service_waterproofing_desc:
+            "Complete protection for your terraces with modern waterproofing and thermal insulation systems. German products with warranty up to 30 years.",
+
+          // Highlights
+          highlight_3d: "3D Effects",
+          highlight_artistic: "Artistic Motifs",
+          highlight_personalized: "Personalized Design",
+          highlight_modern_designs: "Modern Designs",
+          highlight_3d_prints: "3D Prints",
+          highlight_perfect_install: "Perfect Installation",
+          highlight_water_resistant: "Water Resistant",
+          highlight_seamless: "Seamless",
+          highlight_natural_shine: "Natural Shine",
+          highlight_italian_technique: "Italian Technique",
+          highlight_natural_veins: "Natural Veins",
+          highlight_marble_effect: "Marble Effect",
+          highlight_super_resistant: "Super Resistant",
+          highlight_3d_effects: "3D Effects",
+          highlight_chemical_resistant: "Chemically Resistant",
+          highlight_led_integrated: "Integrated LED",
+          highlight_modern_design: "Modern Design",
+          highlight_energy_saving: "Energy Saving",
+          highlight_thermal_comfort: "Thermal Comfort",
+          highlight_100_waterproof: "100% Waterproof",
+          highlight_30_year: "30 Year Warranty",
+          highlight_german_products: "German Products",
+
+          // Services
+          services_title: "Our Other Services",
+          services_subtitle:
+            "With a wide range of professional services, we are your trusted partner for every project.",
+          service_plumbing_title: "Plumbing Works",
+          service_plumbing_desc:
+            "Specialized plumbing installations and repairs for water supply and heating systems.",
+          tag_water: "Water installations",
+          tag_repair: "Pipe repairs",
+          tag_heating: "Heating systems",
+
+          // Products
+          products_title: "Our Premium Products",
+          products_subtitle:
+            "We work only with the best brands in the market. Our products are carefully selected to guarantee superior results.",
+
+          // Product Categories
+          cat_italian_paints: "🇮🇹 Italian Decorative Paints",
+          cat_german_paints: "🇩🇪 German Antibacterial Ecological Paints Dinova",
+          cat_american_paints: "🇺🇸 American Benjamin Moore Premium Paints",
+          cat_mkc_paints: "🇩🇪 German MKC High Quality Paints",
+          cat_waterproofing: "🛡️ Waterproofing",
+
+          // Product Details
+          product_italian_authentic: "Authentic Italian elegance",
+          product_italian_desc:
+            "Do you want your environment to have a modern and luxurious look? We are here to turn this desire into reality!",
+          product_cebos_quality:
+            "According to the highest standards of design and quality.",
+          product_cebos_desc:
+            "An elegant choice for those looking for more than just a wall color.",
+          product_dinova_warranty: "10-15 years warranty from manufacturer",
+          product_dinova_desc:
+            "Dinova offers German ecological and antibacterial paint, designed for indoor environments that require cleanliness and high quality.",
+          product_benjamin_quality:
+            "Paints that keep you away from mold problems for many years.",
+          product_benjamin_desc:
+            "Benjamin Moore Premium is a high quality American paint that offers rich colors, full coverage and exceptional resistance.",
+          product_mkc_quality:
+            "High quality paints that offer quality and warranty for your environments.",
+          product_mkc_desc:
+            "MKC Standard is German paint with good quality and reasonable price, suitable for facade paint.",
+          product_rust_warranty: "Up to 15 years warranty",
+          product_rust_desc:
+            "Rust-Oleum 10 is an American anti-corrosive and highly resistant paint, created to protect metals from rust and external factors.",
+          product_mkc_hydro_warranty:
+            "25 to 30 years warranty highly resistant",
+          product_mkc_hydro_desc:
+            "MKC Waterproofing is a high-performance German product designed to protect surfaces from water, moisture and vapor penetration.",
+
+          // Product Features
+          product_features_title: "Why Our Products Are the Right Choice",
+          feature_tech_title: "Advanced Technology",
+          feature_tech_desc:
+            "Modern formulations that guarantee superior performance and longevity.",
+          feature_standards_title: "International Standards",
+          feature_standards_desc:
+            "All products meet the highest European and American standards.",
+          feature_producers_title: "Renowned Manufacturers",
+          feature_producers_desc:
+            "Exclusive partners with leading companies in the construction industry.",
+          feature_certificates_title: "Warranty Certificates",
+          feature_certificates_desc:
+            "Each product comes with complete documentation and extended warranty.",
+
+          // Footer
+          footer_tagline: "Experts in quality work for your home",
+          footer_address: "Address",
+          footer_contact: "Contact",
+          footer_hours: "Working Hours",
+          footer_weekdays: "Monday - Friday: 08:00 - 18:00",
+          footer_saturday: "Saturday: 09:00 - 14:00",
+          footer_rights: "All rights reserved.",
+        },
+
+        de: {
+          // Navigation
+          nav_home: "Startseite",
+          nav_about: "Über uns",
+          nav_featured_services: "Besondere Dienstleistungen",
+          nav_services: "Alle Dienstleistungen",
+          nav_products: "Produkte",
+          nav_contact: "Kontakt",
+
+          // Hero Section
+          hero_subtitle: "Leo Petritaj - Experten für Qualitätsarbeit",
+          hero_description:
+            "Verwandeln Sie Ihren Raum mit den Farben und dem Design, von dem Sie träumen! Mit 15 Jahren Branchenerfahrung bieten wir professionelle Lösungen für jeden Bedarf Ihres Hauses.",
+          feature_warranty: "✓ 25-30 Jahre Garantie",
+          feature_products: "✓ Amerikanische & Deutsche Produkte",
+          feature_consultation: "✓ Kostenlose Beratung",
+          cta_button: "Jetzt kostenlose Beratung buchen",
+
+          // Banner
+          banner_title: "Farben Ihrer Träume",
+          banner_text:
+            "Spezialisten für die Transformation von Räumen mit modernen Farben und Designs",
+
+          // About Section
+          about_title: "Über Color Design - Leo Petritaj",
+          about_desc1:
+            "<strong>Color Design Leo Petritaj</strong> ist führend in Tirana für Qualitätsarbeit in Häusern und Geschäftsumgebungen. Gegründet von Leo Petritaj, einem Profi mit langjähriger Erfahrung in der Branche.",
+          about_desc2:
+            "Wir sind spezialisiert auf eine breite Palette von Dienstleistungen, einschließlich moderner Elektroarbeiten, künstlerischer Malerei, luxuriöser venezianischer Stuckapplikationen und professioneller Abdichtung.",
+          stat_experience: "Jahre Erfahrung",
+          stat_projects: "Abgeschlossene Projekte",
+          stat_warranty: "Jahre Garantie",
+          stat_satisfaction: "Zufriedene Kunden",
+          team_professional: "Professionelles Team",
+
+          // Why Choose Us
+          why_choose_title: "Warum Color Design - Leo Petritaj wählen?",
+          reason_expertise_title: "Bewährte Expertise",
+          reason_expertise_desc:
+            "Tausende erfolgreiche Projekte und zufriedene Kunden in ganz Tirana und Umgebung.",
+          reason_materials_title: "Premium-Materialien",
+          reason_materials_desc:
+            "Wir verwenden ausschließlich amerikanische und deutsche Produkte, die mit internationalen Standards zertifiziert sind.",
+          reason_delivery_title: "Pünktliche Lieferung",
+          reason_delivery_desc:
+            "Wir respektieren Fristen und stellen sicher, dass Projekte gemäß dem vereinbarten Zeitplan abgeschlossen werden.",
+          reason_pricing_title: "Transparente Preise",
+          reason_pricing_desc:
+            "Detaillierte Angebote und wettbewerbsfähige Preise ohne versteckte Kosten. Kostenlose Beratung und Kostenvoranschlag.",
+
+          // Featured Services
+          featured_services_title: "Unsere besonderen Dienstleistungen",
+          featured_services_subtitle:
+            "Wir sind spezialisiert auf moderne dekorative Arbeiten und fortschrittliche Technologien zur Transformation Ihrer Räume",
+          tab_all: "Alle",
+          tab_decorative: "Dekorativ",
+          tab_technical: "Technisch",
+          tab_isolation: "Isolierung",
+          badge_most_requested: "Meist gefragt",
+          badge_luxury: "Luxus",
+          badge_innovative: "Innovativ",
+          badge_efficiency: "Effizienz",
+          badge_30_year_warranty: "30 Jahre Garantie",
+
+          // Service Cards
+          service_decorative_title: "Verschiedene dekorative Arbeiten",
+          service_decorative_desc:
+            "Verwandeln Sie Ihre Wände mit unseren modernen dekorativen Techniken in Kunstwerke. Von 3D-Effekten bis zu künstlerischen Motiven.",
+          service_wallpaper_title: "Tapeten",
+          service_wallpaper_desc:
+            "Professionelle Anwendung von modernen und traditionellen Tapeten. Wir bieten eine breite Palette von Designs von klassischen Motiven bis zu modernen 3D-Drucken.",
+          service_microcement_title: "Mikrozement-Arbeiten",
+          service_microcement_desc:
+            "Wir schaffen einzigartige und elegante Umgebungen, die für jede Art von Raum geeignet sind.",
+          service_venetian_title: "Venezianischer Stuck",
+          service_venetian_desc:
+            "Klassische italienische Eleganz mit authentischem venezianischem Stuck. Wir schaffen glatte Oberflächen wie Marmor mit natürlichem Glanz.",
+          service_marble_title: "Marmoreffekt",
+          service_marble_desc:
+            "Rekonstruieren Sie die Schönheit von natürlichem Marmor mit speziellen Techniken. Jede Wand wird zu einem einzigartigen Kunstwerk.",
+          service_epoxy_title: "Epoxidboden-Arbeiten",
+          service_epoxy_desc:
+            "Industrielle und moderne Böden mit Epoxidharz. Widerstandsfähig, anpassbar mit Farben und spektakulären 3D-Effekten.",
+          service_gypsum_title: "Gipsarbeiten und Malerei",
+          service_gypsum_desc:
+            "Moderne Zwischendecken, elegante Raumteiler und Gipsdekorationen. Individuelle Designs mit integrierter LED-Beleuchtung.",
+          service_thermal_title: "Wärmedämmungsarbeiten (Capoto)",
+          service_thermal_desc:
+            "Moderne nahtlose Oberflächen mit Mikrozement. Ideal für Badezimmer, Küchen und Industrieböden mit minimalistischem Look.",
+          service_waterproofing_title:
+            "Abdichtung & Wärmedämmung für Terrassen",
+          service_waterproofing_desc:
+            "Vollständiger Schutz für Ihre Terrassen mit modernen Abdichtungs- und Wärmedämmsystemen. Deutsche Produkte mit bis zu 30 Jahren Garantie.",
+
+          // Highlights
+          highlight_3d: "3D-Effekte",
+          highlight_artistic: "Künstlerische Motive",
+          highlight_personalized: "Personalisiertes Design",
+          highlight_modern_designs: "Moderne Designs",
+          highlight_3d_prints: "3D-Drucke",
+          highlight_perfect_install: "Perfekte Installation",
+          highlight_water_resistant: "Wasserbeständig",
+          highlight_seamless: "Nahtlos",
+          highlight_natural_shine: "Natürlicher Glanz",
+          highlight_italian_technique: "Italienische Technik",
+          highlight_natural_veins: "Natürliche Adern",
+          highlight_marble_effect: "Marmoreffekt",
+          highlight_super_resistant: "Super widerstandsfähig",
+          highlight_3d_effects: "3D-Effekte",
+          highlight_chemical_resistant: "Chemisch beständig",
+          highlight_led_integrated: "Integrierte LED",
+          highlight_modern_design: "Modernes Design",
+          highlight_energy_saving: "Energieeinsparung",
+          highlight_thermal_comfort: "Thermischer Komfort",
+          highlight_100_waterproof: "100% wasserdicht",
+          highlight_30_year: "30 Jahre Garantie",
+          highlight_german_products: "Deutsche Produkte",
+
+          // Services
+          services_title: "Unsere anderen Dienstleistungen",
+          services_subtitle:
+            "Mit einer breiten Palette professioneller Dienstleistungen sind wir Ihr vertrauenswürdiger Partner für jedes Projekt.",
+          service_plumbing_title: "Sanitärarbeiten",
+          service_plumbing_desc:
+            "Spezialisierte Sanitärinstallationen und -reparaturen für Wasserversorgungs- und Heizsysteme.",
+          tag_water: "Wasserinstallationen",
+          tag_repair: "Rohrreparaturen",
+          tag_heating: "Heizsysteme",
+
+          // Products
+          products_title: "Unsere Premium-Produkte",
+          products_subtitle:
+            "Wir arbeiten nur mit den besten Marken auf dem Markt. Unsere Produkte wurden sorgfältig ausgewählt, um überlegene Ergebnisse zu garantieren.",
+
+          // Product Categories
+          cat_italian_paints: "🇮🇹 Italienische dekorative Farben",
+          cat_german_paints:
+            "🇩🇪 Deutsche antibakterielle ökologische Farben Dinova",
+          cat_american_paints: "🇺🇸 Amerikanische Benjamin Moore Premium Farben",
+          cat_mkc_paints: "🇩🇪 Deutsche MKC hochwertige Farben",
+          cat_waterproofing: "🛡️ Abdichtung",
+
+          // Product Details
+          product_italian_authentic: "Authentische italienische Eleganz",
+          product_italian_desc:
+            "Möchten Sie, dass Ihre Umgebung modern und luxuriös aussieht? Wir sind hier, um diesen Wunsch Wirklichkeit werden zu lassen!",
+          product_cebos_quality:
+            "Nach den höchsten Standards von Design und Qualität.",
+          product_cebos_desc:
+            "Eine elegante Wahl für diejenigen, die mehr als nur eine Wandfarbe suchen.",
+          product_dinova_warranty: "10-15 Jahre Garantie vom Hersteller",
+          product_dinova_desc:
+            "Dinova bietet deutsche ökologische und antibakterielle Farbe, die für Innenräume entwickelt wurde, die Sauberkeit und hohe Qualität erfordern.",
+          product_benjamin_quality:
+            "Farben, die Sie viele Jahre lang von Schimmelproblemen fernhalten.",
+          product_benjamin_desc:
+            "Benjamin Moore Premium ist eine hochwertige amerikanische Farbe, die satte Farben, vollständige Abdeckung und außergewöhnliche Beständigkeit bietet.",
+          product_mkc_quality:
+            "Hochwertige Farben, die Qualität und Garantie für Ihre Umgebungen bieten.",
+          product_mkc_desc:
+            "MKC Standard ist deutsche Farbe mit guter Qualität und vernünftigem Preis, geeignet für Fassadenfarbe.",
+          product_rust_warranty: "Bis zu 15 Jahre Garantie",
+          product_rust_desc:
+            "Rust-Oleum 10 ist eine amerikanische korrosionsbeständige und hochbeständige Farbe, die zum Schutz von Metallen vor Rost und äußeren Faktoren entwickelt wurde.",
+          product_mkc_hydro_warranty: "25 bis 30 Jahre Garantie hochbeständig",
+          product_mkc_hydro_desc:
+            "MKC Abdichtung ist ein deutsches Hochleistungsprodukt zum Schutz von Oberflächen vor Wasser, Feuchtigkeit und Dampfdurchlässigkeit.",
+
+          // Product Features
+          product_features_title:
+            "Warum unsere Produkte die richtige Wahl sind",
+          feature_tech_title: "Fortschrittliche Technologie",
+          feature_tech_desc:
+            "Moderne Formulierungen, die überlegene Leistung und Langlebigkeit garantieren.",
+          feature_standards_title: "Internationale Standards",
+          feature_standards_desc:
+            "Alle Produkte erfüllen die höchsten europäischen und amerikanischen Standards.",
+          feature_producers_title: "Renommierte Hersteller",
+          feature_producers_desc:
+            "Exklusive Partner mit führenden Unternehmen in der Bauindustrie.",
+          feature_certificates_title: "Garantiezertifikate",
+          feature_certificates_desc:
+            "Jedes Produkt kommt mit vollständiger Dokumentation und erweiterter Garantie.",
+
+          // Footer
+          footer_tagline: "Experten für Qualitätsarbeit für Ihr Zuhause",
+          footer_address: "Adresse",
+          footer_contact: "Kontakt",
+          footer_hours: "Arbeitszeiten",
+          footer_weekdays: "Montag - Freitag: 08:00 - 18:00",
+          footer_saturday: "Samstag: 09:00 - 14:00",
+          footer_rights: "Alle Rechte vorbehalten.",
+        },
+      };
+
+      // Language Management
+      let currentLanguage = "sq";
+
+      // Language switcher functionality
+      function initLanguageSwitcher() {
+        const languageSwitcher = document.getElementById("languageSwitcher");
+        const languageOptions = document.querySelectorAll(".lang-option");
+        const currentLangText = document.getElementById("currentLangText");
+        const currentFlag = document.getElementById("currentFlag");
+
+        const flags = {
+          sq: "🇦🇱",
+          en: "🇬🇧",
+          de: "🇩🇪",
+        };
+
+        const langNames = {
+          sq: "SQ",
+          en: "EN",
+          de: "DE",
+        };
+
+        // Toggle dropdown
+        if (languageSwitcher) {
+          languageSwitcher.addEventListener("click", (e) => {
+            e.stopPropagation();
+            languageSwitcher.classList.toggle("active");
+          });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", () => {
+          languageSwitcher?.classList.remove("active");
+        });
+
+        // Handle language selection
+        languageOptions.forEach((option) => {
+          option.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const lang = option.getAttribute("data-lang");
+            changeLanguage(lang);
+            languageSwitcher.classList.remove("active");
+
+            // Update current language display
+            currentLangText.textContent = langNames[lang];
+            currentFlag.textContent = flags[lang];
+
+            // Update active state
+            languageOptions.forEach((opt) => opt.classList.remove("active"));
+            option.classList.add("active");
+
+            // Save preference
+            localStorage.setItem("preferredLanguage", lang);
+          });
+        });
+      }
+
+      // Change language function
+      function changeLanguage(lang) {
+        currentLanguage = lang;
+        const elements = document.querySelectorAll("[data-translate]");
+
+        elements.forEach((element) => {
+          const key = element.getAttribute("data-translate");
+          if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+              element.placeholder = translations[lang][key];
+            } else {
+              element.innerHTML = translations[lang][key];
+            }
+          }
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.lang =
+          lang === "sq" ? "sq" : lang === "de" ? "de" : "en";
+      }
+
+      // Detect user location by IP and set language
+      async function detectUserLocation() {
+        try {
+          // Try multiple IP geolocation services for redundancy
+          const services = [
+            "https://ipapi.co/json/",
+            "https://ip-api.com/json/",
+            "https://ipinfo.io/json",
+          ];
+
+          for (const service of services) {
+            try {
+              const response = await fetch(service);
+              const data = await response.json();
+
+              // Get country code
+              const countryCode =
+                data.country_code || data.countryCode || data.country;
+
+              // Set language based on country
+              if (countryCode === "AL" || countryCode === "XK") {
+                return "sq"; // Albanian for Albania and Kosovo
+              } else if (
+                countryCode === "DE" ||
+                countryCode === "AT" ||
+                countryCode === "CH"
+              ) {
+                return "de"; // German for Germany, Austria, Switzerland
+              } else {
+                return "en"; // English for all others
+              }
+            } catch (error) {
+              console.log(`Failed to fetch from ${service}, trying next...`);
+            }
+          }
+        } catch (error) {
+          console.error("Error detecting location:", error);
+        }
+
+        return "en"; // Default to English if detection fails
+      }
+
+      // Initialize language on page load
+      async function initializeLanguage() {
+        // Check for saved preference first
+        const savedLanguage = localStorage.getItem("preferredLanguage");
+
+        if (savedLanguage) {
+          currentLanguage = savedLanguage;
+        } else {
+          // Detect language based on IP location
+          currentLanguage = await detectUserLocation();
+        }
+
+        // Apply the language
+        changeLanguage(currentLanguage);
+
+        // Update language switcher UI
+        const currentLangText = document.getElementById("currentLangText");
+        const currentFlag = document.getElementById("currentFlag");
+        const flags = { sq: "🇦🇱", en: "🇬🇧", de: "🇩🇪" };
+        const langNames = { sq: "SQ", en: "EN", de: "DE" };
+
+        if (currentLangText && currentFlag) {
+          currentLangText.textContent = langNames[currentLanguage];
+          currentFlag.textContent = flags[currentLanguage];
+        }
+
+        // Set active state for language option
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          if (opt.getAttribute("data-lang") === currentLanguage) {
+            opt.classList.add("active");
+          }
+        });
+      }
+
       // Hide loader when page loads
-      window.addEventListener("load", () => {
+      window.addEventListener("load", async () => {
+        // Initialize language system
+        await initializeLanguage();
+        initLanguageSwitcher();
+
+        // Hide loader
         setTimeout(() => {
           document.getElementById("loader").classList.add("hidden");
         }, 1500);
@@ -3085,19 +3986,21 @@
       // Add typing effect to hero title
       const heroTitle = document.querySelector(".hero-title");
       const text = "Doctor Home";
-      heroTitle.textContent = "";
-      let i = 0;
+      if (heroTitle) {
+        heroTitle.textContent = "";
+        let i = 0;
 
-      function typeWriter() {
-        if (i < text.length) {
-          heroTitle.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, 100);
+        function typeWriter() {
+          if (i < text.length) {
+            heroTitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          }
         }
-      }
 
-      // Start typing after loader hides
-      setTimeout(typeWriter, 2000);
+        // Start typing after loader hides
+        setTimeout(typeWriter, 2000);
+      }
 
       // Service tabs filtering
       const serviceTabs = document.querySelectorAll(".service-tab");
@@ -3126,21 +4029,6 @@
           });
         });
       });
-
-      // Structured Data for Rich Snippets
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        url: "https://doctorhome.al/",
-        name: "Doctor Home - Leo Petritaj",
-        description:
-          "Lyerje, hidroizolim dhe punime elektrike profesionale në Tiranë",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://doctorhome.al/search?q={search_term_string}",
-          "query-input": "required name=search_term_string",
-        },
-      };
     </script>
   </body>
 </html>
